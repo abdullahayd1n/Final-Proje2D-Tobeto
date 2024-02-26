@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: af51159df0b5e6a40946ad2863de39bc
+=======
+guid: 261e0fb68c4443d4faf8d49dfd067cb6
+>>>>>>> 0143a4d7205a247faa94a1eccc6a0eb50f2894fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -90,6 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+<<<<<<< HEAD
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -102,6 +107,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+=======
+>>>>>>> 0143a4d7205a247faa94a1eccc6a0eb50f2894fb
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
