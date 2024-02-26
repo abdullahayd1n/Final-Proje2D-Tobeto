@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: attack1
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 469283f671ffb5c4aa9d73390c6d4f11, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: 1228c3f5812b8ed42a1c6784035da261, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: 4b4b63a0d7db8b74aac8e56bbc7f040c, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: ad603fe59b7f7d14888c95a7feb343f0, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 8cc16de5248330f46a531d2a03977549, type: 3}
+    - time: 0.41666666
+      value: {fileID: 21300000, guid: d8c3b3e445ecbe54b95c4eb67382b00d, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: f7e9b349011ef784eb663c600d3581d6, type: 3}
+    - time: 0.5833333
+      value: {fileID: 21300000, guid: 8ddcb7e592ab3224d856686279712128, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: 89d051b25ef035140ba681ebe510e522, type: 3}
+    - time: 0.75
+      value: {fileID: 21300000, guid: 289740da15c086f4eb5863b4eb9bc694, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: fce042d755790a84ba3bbf41d1186415, type: 3}
+    - time: 0.9166667
+      value: {fileID: 21300000, guid: 550aca53fd276fc4b876447e443421fc, type: 3}
+    - time: 1
+      value: {fileID: 21300000, guid: db43d76791d32b44bb8301754523581c, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 12
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 469283f671ffb5c4aa9d73390c6d4f11, type: 3}
+    - {fileID: 21300000, guid: 1228c3f5812b8ed42a1c6784035da261, type: 3}
+    - {fileID: 21300000, guid: 4b4b63a0d7db8b74aac8e56bbc7f040c, type: 3}
+    - {fileID: 21300000, guid: ad603fe59b7f7d14888c95a7feb343f0, type: 3}
+    - {fileID: 21300000, guid: 8cc16de5248330f46a531d2a03977549, type: 3}
+    - {fileID: 21300000, guid: d8c3b3e445ecbe54b95c4eb67382b00d, type: 3}
+    - {fileID: 21300000, guid: f7e9b349011ef784eb663c600d3581d6, type: 3}
+    - {fileID: 21300000, guid: 8ddcb7e592ab3224d856686279712128, type: 3}
+    - {fileID: 21300000, guid: 89d051b25ef035140ba681ebe510e522, type: 3}
+    - {fileID: 21300000, guid: 289740da15c086f4eb5863b4eb9bc694, type: 3}
+    - {fileID: 21300000, guid: fce042d755790a84ba3bbf41d1186415, type: 3}
+    - {fileID: 21300000, guid: 550aca53fd276fc4b876447e443421fc, type: 3}
+    - {fileID: 21300000, guid: db43d76791d32b44bb8301754523581c, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1.0833334
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events:
+  - time: 0.5833333
+    functionName: Start_Combo
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1
+    functionName: Fnish_ani
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
