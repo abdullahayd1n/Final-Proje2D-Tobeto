@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
     Animator anim;
     public Transform shootingPoint;
     public GameObject bulletPrefab;
+    AudioSource audioSource;
 
     // Atýþ aralýðýný kontrol etmek için zamanlayýcý
     private float nextShootTime = 0f;
@@ -16,6 +17,7 @@ public class PlayerShoot : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -24,6 +26,7 @@ public class PlayerShoot : MonoBehaviour
         if (Time.time >= nextShootTime && Keyboard.current.tKey.wasPressedThisFrame && !anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
         {
             Shoot(); // Atýþ yap
+            audioSource.Play();
             nextShootTime = Time.time + shootInterval; // Bir sonraki atýþ zamanýný güncelle
         }
     }
