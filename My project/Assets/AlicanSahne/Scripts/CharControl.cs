@@ -99,10 +99,9 @@ public class CharControl : MonoBehaviour
 
     private void Flip()
     {
+        transform.Rotate(new Vector3(0,180, 0));
         isFacingRight = !isFacingRight;
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
+       
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -149,11 +148,12 @@ public class CharControl : MonoBehaviour
         }
     }
 
-    
+
 
     private void UpdateAnimation()
     {
         anim.SetBool("jump", !IsGrounded());
-       
+        anim.SetBool("walk", Mathf.Abs(horizontal) > 0 && IsGrounded()); // Yerden yürüme animasyonunu kontrol et
     }
+
 }
