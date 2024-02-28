@@ -24,7 +24,7 @@ public class CharControl : MonoBehaviour
 
     private float horizontal;
     public float speed = 0f;
-    private float jumpingPower = 8f;
+    private float jumpingPower = 6f;
     private bool isFacingRight = true;
 
     private void Start()

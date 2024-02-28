@@ -19,6 +19,7 @@ public class Mermi : MonoBehaviour
     {
         if (collision.CompareTag("WhatIsEnemies"))
         {
+            
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * knockbackForce, ForceMode2D.Impulse);
             collision.GetComponent<EnemyHealth>().TakeDamage(50);
             Destroy(gameObject);

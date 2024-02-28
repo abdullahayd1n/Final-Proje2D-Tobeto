@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   endTime: 3
+  knockbackForce: 5

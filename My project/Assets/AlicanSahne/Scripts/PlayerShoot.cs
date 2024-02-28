@@ -33,7 +33,28 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
+
         anim.SetTrigger("shoot");
+        CameraShake.instance.shakeCamera(25f, 3f);
+
+
+
+
         Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        StartCoroutine(ResetTimeScaleAfterAnimation());
+
     }
+
+    IEnumerator ResetTimeScaleAfterAnimation()
+    {
+        // Bu animasyonun bitiþini bekler
+        while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            yield return null;
+        }
+
+        // Animasyon bittiðinde zamaný normale çevir
+        Time.timeScale = 1f;
+    }
+
 }
