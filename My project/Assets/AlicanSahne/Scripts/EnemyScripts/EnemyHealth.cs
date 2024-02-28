@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+
     public int health;
     public float speed;
     Rigidbody rb;
     public GameObject popUpDamagePrefab;
     public TMP_Text popUpText;
+    
 
     [SerializeField] private SimpleFlash flashEffect;
     
@@ -53,6 +55,8 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
+
+
 
 
 }
