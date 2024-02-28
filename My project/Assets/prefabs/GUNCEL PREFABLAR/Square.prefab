@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5409403582067233694}
   - component: {fileID: 835548654971582817}
   - component: {fileID: 9157145320653246584}
-  - component: {fileID: 4774412371149458969}
   - component: {fileID: 3639996273240810728}
+  - component: {fileID: 4774412371149458969}
   m_Layer: 6
   m_Name: Square
   m_TagString: WhatIsEnemies
@@ -161,6 +161,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3639996273240810728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105664852272728089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cceee3d1bd4de3c4e951e5595572c370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 84d709fca98ddac4f9fe0673602dc5f1, type: 2}
+  duration: 0.25
 --- !u!114 &4774412371149458969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,17 +192,3 @@ MonoBehaviour:
   flashEffect: {fileID: 0}
   bloodEffect: {fileID: 626033964505884430, guid: a0f5356d2d5b5bd4b8b0a9c4c90fe01b,
     type: 3}
---- !u!114 &3639996273240810728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4105664852272728089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cceee3d1bd4de3c4e951e5595572c370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashMaterial: {fileID: 2100000, guid: 84d709fca98ddac4f9fe0673602dc5f1, type: 2}
-  duration: 0.25
