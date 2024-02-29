@@ -21,7 +21,7 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
 
         // The SpriteRenderer that should flash.
         private SpriteRenderer spriteRenderer;
-
+        
         // The material that was in use, when the script started.
         private Material originalMaterial;
 

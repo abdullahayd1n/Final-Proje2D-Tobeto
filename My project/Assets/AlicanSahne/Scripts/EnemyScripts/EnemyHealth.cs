@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
     
 
     private Animator anim;
-    private LucasHealth lucasCurrentHeal;
+    
     public int maxhealth;
     public int health;
 
@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
     public TMP_Text popUpText;
     private EnemyHealthBar healthBar;
 
-    private EnemyPatrol1 enemyPatrol;
+   
 
    [SerializeField] private SimpleFlash flashEffect;
    public GameObject bloodEffect;
@@ -42,7 +42,7 @@ public class EnemyHealth : MonoBehaviour
         health = maxhealth;
         healthBar = GetComponentInChildren<EnemyHealthBar>();
         rb = GetComponent<Rigidbody>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol1>();
+        
         
     }
     
@@ -84,6 +84,7 @@ public class EnemyHealth : MonoBehaviour
             LucasHealth healthComponent = collision.gameObject.GetComponent<LucasHealth>();
            if (healthComponent != null)
             {
+                
                 healthComponent.TakeDamage(10); // Oyuncuya 10 hasar veriliyor
             }
         }
