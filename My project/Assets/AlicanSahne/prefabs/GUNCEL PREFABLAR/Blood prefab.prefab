@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3330460119724667531}
   - component: {fileID: 4306036505733729217}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Blood prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WhatIsEnemies
   - player
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - IsGrounded
   - nesne
   - Player
-  - 
+  - obstacleLayer
   - 
   - 
   - 

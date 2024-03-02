@@ -7,7 +7,6 @@ public class Mermi : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     public float endTime;
-    public float knockbackForce = 5f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,9 +18,7 @@ public class Mermi : MonoBehaviour
     {
         if (collision.CompareTag("WhatIsEnemies"))
         {
-            
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * knockbackForce, ForceMode2D.Impulse);
-            collision.GetComponent<EnemyHealth>().TakeDamage(50);
+            //collision.GetComponent<MeleeEnemy>().TakeDamage(50);
             Destroy(gameObject);
         }
     }

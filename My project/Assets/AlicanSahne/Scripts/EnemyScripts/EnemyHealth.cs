@@ -5,14 +5,6 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-
-    [Header("Attack Paramaters")]
-    
-
-
-    [Header("Collider Paramtaters")]
-    [SerializeField] private float colliderDistance;
-
     [Header("Player Layers")]
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;

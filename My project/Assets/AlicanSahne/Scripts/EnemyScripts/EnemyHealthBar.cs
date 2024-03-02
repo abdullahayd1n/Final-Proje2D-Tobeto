@@ -12,9 +12,9 @@ public class EnemyHealthBar : MonoBehaviour
     }
 
     // Saðlýk çubuðunu güncellemek için bu metod
-    public void UpdateHealthBar(float maxHealth, float currentHealth)
+    public void UpdateHealthBar(float enemyHealth, float health)
     {
         // Saðlýk çubuðunun doluluk oranýný hesapla ve ayarla
-        healthBarImage.fillAmount = currentHealth / maxHealth;
+        healthBarImage.fillAmount = enemyHealth / health;
     }
 }

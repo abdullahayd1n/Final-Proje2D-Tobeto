@@ -23,7 +23,7 @@ public class MeleeAttack : MonoBehaviour
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, WhatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    enemiesToDamage[i].GetComponent<EnemyHealth>().TakeDamage(damage);
+                    //enemiesToDamage[i].GetComponent<MeleeEnemy>().TakeDamage(damage);
                     enemiesToDamage[i].GetComponent<Rigidbody2D>().AddForce(Vector2.right * knockbackForce, ForceMode2D.Impulse);
                 }
 
