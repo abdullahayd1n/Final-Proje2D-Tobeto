@@ -59,7 +59,8 @@ MonoBehaviour:
   spacing: 1
   springConstant: 0.02
   springDamping: 0.01
-  splashParticle: {fileID: 1458402465880904, guid: 41a0c8330681eb646999659073cb1630, type: 3}
+  splashParticle: {fileID: 1458402465880904, guid: 41a0c8330681eb646999659073cb1630,
+    type: 3}
   vertices:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
