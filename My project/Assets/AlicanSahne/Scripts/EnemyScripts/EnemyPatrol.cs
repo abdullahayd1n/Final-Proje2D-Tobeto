@@ -26,14 +26,21 @@ public class EnemyPatrol : MonoBehaviour
         initScale = enemy.localScale; // Düþmanýn baþlangýç ölçeðini kaydet
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
-        anim.SetBool("moving", false); // Düþmanýn Animator'ýndaki "moving" parametresini false olarak ayarla
+        // Null kontrolü yaparak animator'ýn null olup olmadýðýný kontrol ediyoruz
+        if (anim != null)
+        {
+            // Set the "moving" parameter of the animator to false when this script is disabled
+            anim.SetBool("moving", false);
+        }
     }
+
 
     private void Update()
     {
-        if (leftEdge != null && rightEdge != null) // Sol ve sað sýnýr noktalarý null deðilse devam et
+        // Eðer enemy ve sol ve sað sýnýr noktalarý null deðilse devam et
+        if (enemy != null && leftEdge != null && rightEdge != null)
         {
             if (movingLeft)
             {
@@ -51,6 +58,7 @@ public class EnemyPatrol : MonoBehaviour
             }
         }
     }
+
 
 
     private void DirectionChange()

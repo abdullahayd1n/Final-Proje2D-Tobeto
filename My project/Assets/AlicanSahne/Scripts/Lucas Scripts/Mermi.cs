@@ -18,7 +18,7 @@ public class Mermi : MonoBehaviour
     {
         if (collision.CompareTag("WhatIsEnemies"))
         {
-            //collision.GetComponent<MeleeEnemy>().TakeDamage(50);
+            collision.GetComponent<MeleeEnemy>().TakeDamage(50);
             Destroy(gameObject);
         }
     }

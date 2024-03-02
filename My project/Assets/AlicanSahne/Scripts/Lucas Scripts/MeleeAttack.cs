@@ -10,7 +10,7 @@ public class MeleeAttack : MonoBehaviour
     public int minDamage = 10; // Minimum hasar
     public int maxDamage = 50; // Maksimum hasar
     public float knockbackForce = 5f;
-
+    
     private void Update()
     {
         if (timeBtwAttack <= 0)
@@ -23,7 +23,8 @@ public class MeleeAttack : MonoBehaviour
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, WhatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    //enemiesToDamage[i].GetComponent<MeleeEnemy>().TakeDamage(damage);
+                    
+                    enemiesToDamage[i].GetComponent<MeleeEnemy>().TakeDamage(damage);
                     enemiesToDamage[i].GetComponent<Rigidbody2D>().AddForce(Vector2.right * knockbackForce, ForceMode2D.Impulse);
                 }
 
