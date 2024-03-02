@@ -2,46 +2,53 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
-    private float timeBtwAttack;
-    public float startTimeBtwAttack;
+    public float timeBtwAttack = 0.5f;
+    private float currentTimeBtwAttack;
+
     public Transform attackPos;
     public float attackRange;
     public LayerMask WhatIsEnemies;
-    public int minDamage = 10; // Minimum hasar
-    public int maxDamage = 50; // Maksimum hasar
-    public float knockbackForce = 5f;
-    
+    public int minDamage = 10;
+    public int maxDamage = 50;
+
     private void Update()
     {
-        if (timeBtwAttack <= 0)
+        if (currentTimeBtwAttack <= 0)
         {
-            if (Input.GetKey(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                // Rastgele hasar deðeri oluþtur
-                int damage = Random.Range(minDamage, maxDamage + 1); // +1 ekleyerek maksimum deðeri de dahil ediyoruz
-
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, WhatIsEnemies);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    
-                    enemiesToDamage[i].GetComponent<MeleeEnemy>().TakeDamage(damage);
-                    enemiesToDamage[i].GetComponent<Rigidbody2D>().AddForce(Vector2.right * knockbackForce, ForceMode2D.Impulse);
-                }
-
+                Attack();
             }
-            timeBtwAttack = startTimeBtwAttack;
         }
         else
         {
-            timeBtwAttack -= Time.deltaTime;
+            currentTimeBtwAttack -= Time.deltaTime;
+        }
+    }
+
+    void Attack()
+    {
+        int damage = Random.Range(minDamage, maxDamage + 1);
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, WhatIsEnemies);
+        foreach (Collider2D enemy in enemiesToDamage)
+        {
+            MeleeEnemy meleeEnemy = enemy.GetComponent<MeleeEnemy>();
+            if (meleeEnemy != null)
+            {
+                meleeEnemy.TakeDamage(damage);
+            }
         }
 
+        currentTimeBtwAttack = timeBtwAttack;
     }
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        if (attackPos != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        }
     }
-
 }

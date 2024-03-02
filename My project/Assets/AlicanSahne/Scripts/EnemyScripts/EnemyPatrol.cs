@@ -39,6 +39,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Update()
     {
+
         // Eðer enemy ve sol ve sað sýnýr noktalarý null deðilse devam et
         if (enemy != null && leftEdge != null && rightEdge != null)
         {
