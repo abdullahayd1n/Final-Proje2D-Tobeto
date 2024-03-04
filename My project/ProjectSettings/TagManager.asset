@@ -7,6 +7,7 @@ TagManager:
   - WhatIsEnemies
   - player
   - bullet
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - nesne
   - Player
   - obstacleLayer
-  - 
+  - Health
   - 
   - 
   - 

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2139057946316826800}
   - component: {fileID: 7014827318162548599}
   - component: {fileID: 9056580886277485112}
-  - component: {fileID: 2467651740234773569}
   m_Layer: 6
   m_Name: Dusman
   m_TagString: WhatIsEnemies
@@ -213,14 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f864e62728a7e45b5ed70feaaa80bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
-  range: 1
-  damage: 10
-  colliderDistance: 0.8
-  boxCollider: {fileID: 2139057946316826800}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 512
   health: 200
   enemyHealth: 200
   bloodEffect: {fileID: 626033964505884430, guid: a0f5356d2d5b5bd4b8b0a9c4c90fe01b,
@@ -232,43 +223,17 @@ MonoBehaviour:
   flashEffect: {fileID: 7014827318162548599}
   removeEnemy: 1.5
   alert: {fileID: 6879699829288335570}
-  detectionPauseTime: 2
   rb: {fileID: 0}
---- !u!70 &2467651740234773569
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917717268212537913}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
+  attackCooldown: 2
+  range: 1
+  damage: 10
+  colliderDistance: 0.8
+  boxCollider: {fileID: 2139057946316826800}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.0427637}
-  m_Size: {x: 1.6166667, y: 4.152194}
-  m_Direction: 0
+    m_Bits: 512
+  minDamage: 0
+  maxDamage: 0
 --- !u!1 &1228346636044876367
 GameObject:
   m_ObjectHideFlags: 0

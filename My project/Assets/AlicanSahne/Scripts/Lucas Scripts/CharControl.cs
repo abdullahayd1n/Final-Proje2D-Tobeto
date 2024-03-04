@@ -110,6 +110,8 @@ public class CharControl : MonoBehaviour
         }
     }
 
+    
+
     private void UpdateAnimation()
     {
         anim.SetBool("jump", !IsGrounded());

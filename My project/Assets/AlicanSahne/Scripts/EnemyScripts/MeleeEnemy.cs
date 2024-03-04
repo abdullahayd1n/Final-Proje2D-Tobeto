@@ -6,21 +6,11 @@ using UnityEngine;
 public class MeleeEnemy : MonoBehaviour
 {
     [Header("Attack Parameters")]
+    public int minDamage = 5; // Minimum hasar
+    public int maxDamage = 10; // Maksimum hasar
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private int damage;
-    Transform target;
 
-    [Header("Collider Parameters")]
-    [SerializeField] private float colliderDistance;
-    [SerializeField] private BoxCollider2D boxCollider;
-
-    [Header("Player Layer")]
-    [SerializeField] private LayerMask playerLayer;
-
-    private float cooldownTimer = Mathf.Infinity;
-    private bool playerDetected = false;
-    private float detectionPauseTime = 2f;
 
     [Header("References")]
     public int health;
@@ -36,6 +26,25 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] public float removeEnemy = 1.5f;
     public GameObject alert;
     public Rigidbody2D rb;
+
+    
+    
+    Transform target;
+
+    [Header("Collider Parameters")]
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private BoxCollider2D boxCollider;
+
+    [Header("Player Layer")]
+    [SerializeField] private LayerMask playerLayer;
+
+    private float cooldownTimer = Mathf.Infinity;
+    private bool playerDetected = false;
+    private float detectionPauseTime = 2f;
+
+
+
+
 
     void Start()
     {
@@ -62,7 +71,7 @@ public class MeleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0; // Zamanlayýcýyý sýfýrla
                 anim.SetTrigger("meleeAttack"); // Melee saldýrý animasyonunu baþlat
-                DamagePlayer();
+                
             }
         }
         else
@@ -101,14 +110,7 @@ public class MeleeEnemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    public void DamagePlayer()
-    {
-        if (PlayerInSight() && cooldownTimer >= attackCooldown) // Sadece saldýrý cooldown süresi dolmuþken hasar ver
-        {
-            playerHealth.TakeDamage(damage);
-            cooldownTimer = 0; // Saldýrý yapýldýðýnda cooldown süresini sýfýrla
-        }
-    }
+   
 
 
     public void TakeDamage(int damage)
@@ -152,7 +154,7 @@ public class MeleeEnemy : MonoBehaviour
         rb.velocity = Vector2.zero;
         alert.SetActive(true);
         yield return new WaitForSeconds(detectionPauseTime);
-        
+
     }
 
     private IEnumerator PlayerNOTDetected()
@@ -162,8 +164,16 @@ public class MeleeEnemy : MonoBehaviour
         alert.SetActive(false);
     }
 
+
+
     private void playerDamage()
     {
+        int damage = Random.Range(minDamage, maxDamage + 1); // Rastgele hasar oluþtur
+
         GameObject.FindGameObjectWithTag("Player").GetComponent<LucasHealth>().TakeDamage(damage);
     }
+
+
+
+
 }

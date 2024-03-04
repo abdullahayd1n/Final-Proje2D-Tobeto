@@ -7,6 +7,9 @@ public class Mermi : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     public float endTime;
+    public int minDamage = 25; // Minimum Hasar
+    public int maxDamage = 50; // Maksimum Hasar
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,7 +21,8 @@ public class Mermi : MonoBehaviour
     {
         if (collision.CompareTag("WhatIsEnemies"))
         {
-            collision.GetComponent<MeleeEnemy>().TakeDamage(50);
+            int damage = Random.Range(minDamage, maxDamage + 1); // Rastgele hasar miktarýný belirle
+            collision.GetComponent<MeleeEnemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

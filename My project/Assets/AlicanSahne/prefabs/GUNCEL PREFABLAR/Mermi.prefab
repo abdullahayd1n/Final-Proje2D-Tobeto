@@ -163,3 +163,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   endTime: 3
+  minDamage: 50
+  maxDamage: 70

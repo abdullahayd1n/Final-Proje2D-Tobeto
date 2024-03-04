@@ -4,8 +4,8 @@ using System.Collections;
 
 public class LucasHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100f; // float olarak deðiþtirildi
+    public float currentHealth; // float olarak deðiþtirildi
     public Animator anim;
     public Rigidbody2D rb;
     bool isDead = false;
@@ -16,10 +16,10 @@ public class LucasHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth((int)maxHealth); // maxHealth int'ten float'a çevrildi, bu yüzden (int) ile dönüþtürüldü.
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount) // int yerine float olarak deðiþtirildi
     {
         if (!isDead)
         {
@@ -31,7 +31,7 @@ public class LucasHealth : MonoBehaviour
                 Die();
             else
             {
-                healthBar.setHealth(currentHealth);
+                healthBar.setHealth((int)currentHealth); // currentHealth int'ten float'a çevrildi, bu yüzden (int) ile dönüþtürüldü.
                 anim.SetTrigger("hurt");
             }
         }
@@ -51,16 +51,47 @@ public class LucasHealth : MonoBehaviour
 
     IEnumerator FallAndStop(float duration)
     {
-        float elapsedTime = 0;
+        float elapsedTime = 0f; // float olarak deðiþtirildi
         float startHeight = transform.position.y;
 
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime; // Zamanýn ölçeksiz olarak geçmesini saðla
             yield return null;
         }
 
         Time.timeScale = 0f;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Health"))
+        {
+            // Saðlýk objesini yok et
+            Destroy(other.gameObject);
+
+            // Player'a can ekle
+            TakeHealth(20f); // Örneðin, 20 birim can ekle
+        }
+    }
+
+    // Can ekleme fonksiyonu
+    public void TakeHealth(float healAmount)
+    {
+        if (!isDead)
+        {
+            currentHealth += healAmount;
+
+            // Can miktarýný maksimum can deðerinden büyük olmamasý için kontrol et
+            currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+            // Can çubuðunu güncelle
+            healthBar.setHealth((int)currentHealth);
+
+
+        }
+    }
+
+
 }

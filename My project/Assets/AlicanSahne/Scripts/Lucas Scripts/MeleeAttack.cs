@@ -34,6 +34,7 @@ public class MeleeAttack : MonoBehaviour
         foreach (Collider2D enemy in enemiesToDamage)
         {
             MeleeEnemy meleeEnemy = enemy.GetComponent<MeleeEnemy>();
+            
             if (meleeEnemy != null)
             {
                 meleeEnemy.TakeDamage(damage);
