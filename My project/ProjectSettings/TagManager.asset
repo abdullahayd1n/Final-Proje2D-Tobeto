@@ -9,6 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - IsGrounded
   - Water
   - UI
@@ -18,6 +19,17 @@ TagManager:
   - 
   - 
   - 
+=======
+  - Player
+  - Water
+  - UI
+  - IsGrounded
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> fa685216b8ee73c90fb7ad748696663598772203
   - 
   - 
   - 

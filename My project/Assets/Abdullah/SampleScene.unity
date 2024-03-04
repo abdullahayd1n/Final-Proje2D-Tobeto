@@ -1801,7 +1801,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.3688984
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11630,7 +11630,7 @@ GameObject:
   - component: {fileID: 1247593908}
   - component: {fileID: 1247593907}
   - component: {fileID: 1247593909}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: zemin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13496,7 +13496,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1307396688}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4.3688984
+    OrthographicSize: 5.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -15904,6 +15904,11 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: b6a80598accbfc64385945df0ec3bea8, type: 2}
+    - target: {fileID: 1778845729639560081, guid: 24c593f102456044398c4d2bb32ddef7,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 2444571305915398984, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15917,7 +15922,7 @@ PrefabInstance:
     - target: {fileID: 2737118349541836995, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2895563589780075540, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
@@ -15937,6 +15942,11 @@ PrefabInstance:
     - target: {fileID: 3959396712721744618, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959396712721744618, guid: 24c593f102456044398c4d2bb32ddef7,
+        type: 3}
+      propertyPath: WhatIsEnemies.m_Bits
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5083653480153973655, guid: 24c593f102456044398c4d2bb32ddef7,
