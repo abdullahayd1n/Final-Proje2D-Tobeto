@@ -443,6 +443,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: horizontal_background
       objectReference: {fileID: 0}
+    - target: {fileID: 8502345098187874672, guid: dbaf8a2213ad40943a354a52f1631005,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1285,7 +1290,7 @@ PrefabInstance:
     - target: {fileID: 1778845729639560081, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2444571305915398984, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
@@ -1300,7 +1305,7 @@ PrefabInstance:
     - target: {fileID: 2737118349541836995, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2737118349541836995, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
@@ -1340,7 +1345,7 @@ PrefabInstance:
     - target: {fileID: 3959396712721744618, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
       propertyPath: WhatIsEnemies.m_Bits
-      value: 0
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4395584648000086526, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
@@ -1459,8 +1464,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 917717268212537913, guid: abb8fd21761e00b438dc514c8c5588c6,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 917717268212537913, guid: abb8fd21761e00b438dc514c8c5588c6,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139057946316826800, guid: abb8fd21761e00b438dc514c8c5588c6,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5802479688493235418, guid: abb8fd21761e00b438dc514c8c5588c6,
         type: 3}
@@ -1571,6 +1586,11 @@ PrefabInstance:
         type: 3}
       propertyPath: colliderDistance
       value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056580886277485112, guid: abb8fd21761e00b438dc514c8c5588c6,
+        type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
