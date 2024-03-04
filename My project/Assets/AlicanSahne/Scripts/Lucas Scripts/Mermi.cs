@@ -21,8 +21,20 @@ public class Mermi : MonoBehaviour
     {
         if (collision.CompareTag("WhatIsEnemies"))
         {
-            int damage = Random.Range(minDamage, maxDamage + 1); // Rastgele hasar miktarýný belirle
-            collision.GetComponent<MeleeEnemy>().TakeDamage(damage);
+            RangedEnemy rangedEnemy = collision.GetComponent<RangedEnemy>();
+            if (rangedEnemy != null)
+            {
+                int damage = Random.Range(minDamage, maxDamage + 1); // Randomize damage amount
+                rangedEnemy.TakeDamage(damage);
+            }
+
+            MeleeEnemy meleeEnemy = collision.GetComponent<MeleeEnemy>();
+            if (meleeEnemy != null)
+            {
+                int damage = Random.Range(minDamage, maxDamage + 1); // Randomize damage amount
+                meleeEnemy.TakeDamage(damage);
+            }
+
             Destroy(gameObject);
         }
     }

@@ -165,3 +165,4 @@ MonoBehaviour:
   endTime: 3
   minDamage: 50
   maxDamage: 70
+  knockbackForce: 5

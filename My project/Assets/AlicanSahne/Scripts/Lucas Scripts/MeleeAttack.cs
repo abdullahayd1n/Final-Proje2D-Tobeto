@@ -33,16 +33,22 @@ public class MeleeAttack : MonoBehaviour
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, WhatIsEnemies);
         foreach (Collider2D enemy in enemiesToDamage)
         {
+            RangedEnemy rangedEnemy = enemy.GetComponent<RangedEnemy>();
             MeleeEnemy meleeEnemy = enemy.GetComponent<MeleeEnemy>();
-            
+
             if (meleeEnemy != null)
             {
                 meleeEnemy.TakeDamage(damage);
+            }
+            else if (rangedEnemy != null)
+            {
+                rangedEnemy.TakeDamage(damage);
             }
         }
 
         currentTimeBtwAttack = timeBtwAttack;
     }
+
 
     void OnDrawGizmosSelected()
     {
