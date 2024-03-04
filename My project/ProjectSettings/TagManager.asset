@@ -5,22 +5,24 @@ TagManager:
   serializedVersion: 2
   tags:
   - WhatIsEnemies
-  - player
-  - bullet
-  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - bullet
   - Water
   - UI
   - WhatIsEnemies
   - IsGrounded
-  - nesne
   - Player
+<<<<<<< HEAD
   - obstacleLayer
   - Healths
+=======
+  - 
+  - 
+  - 
+>>>>>>> c3432fe226e16057f97b433317a5ce50c80e9f97
   - 
   - 
   - 
@@ -44,7 +46,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BackGround
-    uniqueID: 2080482043
     locked: 0

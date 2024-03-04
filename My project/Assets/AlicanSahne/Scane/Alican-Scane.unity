@@ -1282,6 +1282,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1778845729639560081, guid: 24c593f102456044398c4d2bb32ddef7,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2444571305915398984, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
       propertyPath: m_Enabled
@@ -1331,6 +1336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959396712721744618, guid: 24c593f102456044398c4d2bb32ddef7,
+        type: 3}
+      propertyPath: WhatIsEnemies.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4395584648000086526, guid: 24c593f102456044398c4d2bb32ddef7,
         type: 3}
