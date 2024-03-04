@@ -9,18 +9,18 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
+  - 
+  - 
+  - 
   - IsGrounded
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - WhatIsEnemies
+  - Player
+  - bullet
+  - TakeHeal
+  - Arrow
   - 
   - 
   - 

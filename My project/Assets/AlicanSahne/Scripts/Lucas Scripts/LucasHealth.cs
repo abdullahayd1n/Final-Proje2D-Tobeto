@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System;
 
 public class LucasHealth : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class LucasHealth : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
 
+
     IEnumerator FallAndStop(float duration)
     {
         float elapsedTime = 0f; // float olarak deðiþtirildi
@@ -66,7 +68,7 @@ public class LucasHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Health"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("TakeHeal"))
         {
             // Saðlýk objesini yok et
             Destroy(other.gameObject);
@@ -93,5 +95,8 @@ public class LucasHealth : MonoBehaviour
         }
     }
 
-
+    internal void TakeDamage(object damageAmount)
+    {
+        throw new NotImplementedException();
+    }
 }
