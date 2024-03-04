@@ -5,13 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - WhatIsEnemies
-  - player
-  - bullet
-<<<<<<< HEAD
-  - Health
-=======
-  - Enemy
->>>>>>> 97c5375880f4d9cad16aa393a9404119530583e9
   layers:
   - Default
   - TransparentFX
