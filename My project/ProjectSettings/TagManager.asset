@@ -9,29 +9,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-<<<<<<< HEAD
-  - IsGrounded
+  - 
   - Water
   - UI
-  - Player
+  - 
+  - 
+  - 
+  - IsGrounded
   - WhatIsEnemies
-  - 
-  - 
-  - 
-  - 
-=======
   - Player
-  - Water
-  - UI
-  - IsGrounded
-  - 
-  - 
-  - 
-  - 
-  - 
->>>>>>> fa685216b8ee73c90fb7ad748696663598772203
-  - 
-  - 
+  - bullet
+  - TakeHeal
   - 
   - 
   - 
