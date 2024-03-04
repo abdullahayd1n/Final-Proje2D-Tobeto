@@ -8,17 +8,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ReflectiveWater
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
   m_Parent: {fileID: 2100000, guid: 43bee363a00a02240b6edcbe6f5f6299, type: 2}
-  m_ModifiedSerializedProperties: 2
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_ModifiedSerializedProperties: 18
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords:
+  - _FLIPBOOKBLENDING_OFF
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -38,7 +43,8 @@ Material:
     - _QueueOffset: 0
     - _SpecularHighlights: 1
     m_Colors:
-    - _Color: {r: 0.2396226, g: 0.84399724, b: 1, a: 1}
+    - _BaseColor: {r: 0.23282298, g: 0.33703694, b: 0.45283008, a: 0.44705883}
+    - _Color: {r: 0.23282295, g: 0.3370369, b: 0.45283002, a: 0.44705883}
   m_BuildTextureStacks: []
 --- !u!114 &6581607819866062798
 MonoBehaviour:
