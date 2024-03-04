@@ -5,28 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - WhatIsEnemies
-<<<<<<< HEAD
-=======
-  - player
-  - bullet
-  - Enemy
->>>>>>> e935512d5574edd12a0fafe8c5fd7c5fba524f83
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - bullet
   - Water
   - UI
+  - WhatIsEnemies
   - IsGrounded
   - Player
-<<<<<<< HEAD
   - 
   - 
-  - 
-=======
-  - obstacleLayer
->>>>>>> e935512d5574edd12a0fafe8c5fd7c5fba524f83
   - 
   - 
   - 
