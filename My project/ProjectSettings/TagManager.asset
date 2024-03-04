@@ -9,20 +9,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - bullet
+  - Player
   - Water
   - UI
-  - WhatIsEnemies
   - IsGrounded
-  - Player
-<<<<<<< HEAD
-  - obstacleLayer
-  - Healths
-=======
   - 
   - 
   - 
->>>>>>> c3432fe226e16057f97b433317a5ce50c80e9f97
+  - 
+  - 
   - 
   - 
   - 
