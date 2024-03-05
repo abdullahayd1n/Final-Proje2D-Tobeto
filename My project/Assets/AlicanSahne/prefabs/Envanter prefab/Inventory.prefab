@@ -724,6 +724,7 @@ MonoBehaviour:
   itemPrefab: {fileID: -5779002567505628509, guid: fa641a42aea794848aaae8e252869bfd,
     type: 3}
   contentPanel: {fileID: 675690097834870284}
+  itemDescription: {fileID: 1419224014370843499}
 --- !u!1 &3179287350696789499
 GameObject:
   m_ObjectHideFlags: 0
