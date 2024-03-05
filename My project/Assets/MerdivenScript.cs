@@ -26,12 +26,12 @@ public class MerdivenScript : MonoBehaviour
     {
         if(isClimbing)
         {
-            rb.gravityScale = 1.8f;
+            rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
         }
         else
         {
-            rb.gravityScale = 4f;
+            rb.gravityScale = 1.8f;
         }
     }
 
