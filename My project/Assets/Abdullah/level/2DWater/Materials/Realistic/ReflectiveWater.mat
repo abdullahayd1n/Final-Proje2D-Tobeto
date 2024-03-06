@@ -43,8 +43,8 @@ Material:
     - _QueueOffset: 0
     - _SpecularHighlights: 1
     m_Colors:
-    - _BaseColor: {r: 0.23282298, g: 0.33703694, b: 0.45283008, a: 0.44705883}
-    - _Color: {r: 0.23282295, g: 0.3370369, b: 0.45283002, a: 0.44705883}
+    - _BaseColor: {r: 0, g: 0.49056602, b: 0.4236706, a: 0.44705883}
+    - _Color: {r: 0, g: 0.49056596, b: 0.42367056, a: 0.44705883}
   m_BuildTextureStacks: []
 --- !u!114 &6581607819866062798
 MonoBehaviour:
