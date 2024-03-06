@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlatformScript : MonoBehaviour
 {
-   public Transform firstPos, secondPos;
-   public float speed;
+    public Transform firstPos, secondPos;
+    public float speed;
 
     Vector3 nextPos;
 
@@ -16,13 +16,13 @@ public class PlatformScript : MonoBehaviour
     }
     private void Update()
     {
-        if(transform.position == firstPos.position)
-           nextPos=secondPos.position; 
+        if (transform.position == firstPos.position)
+            nextPos = secondPos.position;
 
-        if(transform.position == secondPos.position)
-            nextPos = firstPos.position; 
+        if (transform.position == secondPos.position)
+            nextPos = firstPos.position;
 
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
@@ -32,13 +32,17 @@ public class PlatformScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag=="Player")
+        if (collision.transform.tag == "Player")
             collision.collider.transform.SetParent(transform);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player")
+        {
             collision.collider.transform.SetParent(null);
+        }
+            
     }
+
 }
