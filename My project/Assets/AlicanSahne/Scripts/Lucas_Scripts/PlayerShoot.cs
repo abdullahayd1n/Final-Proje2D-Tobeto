@@ -31,7 +31,7 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
 
         anim.SetTrigger("shoot");

@@ -8,6 +8,7 @@ public class Envanter : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             inventory[0].UseItem();

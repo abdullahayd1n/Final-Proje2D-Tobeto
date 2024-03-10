@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a33a6639ceafb6a4abf8cfb6f683a68d, type: 3}
-  m_Name: HealthPoition
+  m_Name: HealthPoitions
   m_EditorClassIdentifier: 
-  itemName: HealthPoition
+  itemName: HealthPoitions
   itemSprite: {fileID: 21300000, guid: 841ccd93826e82b42952411d2be024e5, type: 3}
