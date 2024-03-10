@@ -14,13 +14,12 @@ GameObject:
   - component: {fileID: 8738045613115772255}
   - component: {fileID: 1439566600127106686}
   - component: {fileID: 1778845729639560081}
-  - component: {fileID: 8568960449120537367}
   - component: {fileID: 3959396712721744618}
   - component: {fileID: 3775559716600689958}
-  - component: {fileID: 6503259751477200825}
   - component: {fileID: 6323735714676639995}
-  - component: {fileID: 7191058271085183908}
-  - component: {fileID: 5713548928939155701}
+  - component: {fileID: 8568960449120537367}
+  - component: {fileID: 6503259751477200825}
+  - component: {fileID: 6417323918590872885}
   m_Layer: 0
   m_Name: Lucas (1)
   m_TagString: Player
@@ -198,9 +197,65 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  speed: 5
+  jumpingPower: 6
+--- !u!114 &3959396712721744618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737118349541836995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac359f5860648a242ac8094d84cb1777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBtwAttack: 0.5
+  attackPos: {fileID: 2398160889314813524}
+  attackRange: 0.85
+  WhatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 1024
+  minDamage: 10
+  maxDamage: 50
   combo: 0
   atacakando: 0
-  speed: 5
+--- !u!114 &3775559716600689958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737118349541836995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0c314606f647b459090847f942e665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPoint: {fileID: 6021503148760943509}
+  bulletPrefab: {fileID: 4567692460305785666, guid: c2cadcfe9074fc14288ab99390b7d1bf,
+    type: 3}
+  shootInterval: 3
+--- !u!114 &6323735714676639995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737118349541836995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc91de246162254d8a85f962fa07f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  anim: {fileID: 4395584648000086526}
+  rb: {fileID: 1439566600127106686}
+  healthBar: {fileID: 0}
+  popUpDamagePrefab: {fileID: 0}
+  popUpText: {fileID: 0}
 --- !u!114 &8568960449120537367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,42 +367,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &3959396712721744618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2737118349541836995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac359f5860648a242ac8094d84cb1777, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBtwAttack: 0.5
-  attackPos: {fileID: 2398160889314813524}
-  attackRange: 0.85
-  WhatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 1024
-  minDamage: 10
-  maxDamage: 50
---- !u!114 &3775559716600689958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2737118349541836995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0c314606f647b459090847f942e665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 6021503148760943509}
-  bulletPrefab: {fileID: 4567692460305785666, guid: c2cadcfe9074fc14288ab99390b7d1bf,
-    type: 3}
-  shootInterval: 3
 --- !u!82 &6503259751477200825
 AudioSource:
   m_ObjectHideFlags: 0
@@ -444,7 +463,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6323735714676639995
+--- !u!114 &6417323918590872885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,44 +472,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2737118349541836995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc91de246162254d8a85f962fa07f24, type: 3}
+  m_Script: {fileID: 11500000, guid: 70e4ef0dc3f23074d98e142b471363b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  anim: {fileID: 4395584648000086526}
-  rb: {fileID: 1439566600127106686}
-  healthBar: {fileID: 0}
-  popUpDamagePrefab: {fileID: 0}
-  popUpText: {fileID: 0}
---- !u!114 &7191058271085183908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2737118349541836995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17d06b59957b8a48af25a91eafd6928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 0}
-  inventoryData: {fileID: 11400000, guid: 2ff2f8a1d3f0d664eb1f412643ef5587, type: 2}
-  initialItems: []
---- !u!114 &5713548928939155701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2737118349541836995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49f217e682c723d40a447352e31def59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryData: {fileID: 11400000, guid: 2ff2f8a1d3f0d664eb1f412643ef5587, type: 2}
+  inventory: []
 --- !u!1 &6569596738397775704
 GameObject:
   m_ObjectHideFlags: 0

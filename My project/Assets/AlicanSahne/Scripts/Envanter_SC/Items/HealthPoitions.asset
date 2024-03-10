@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33a6639ceafb6a4abf8cfb6f683a68d, type: 3}
+  m_Name: HealthPoitions
+  m_EditorClassIdentifier: 
+  itemName: HealthPoitions
+  itemSprite: {fileID: 21300000, guid: 841ccd93826e82b42952411d2be024e5, type: 3}
