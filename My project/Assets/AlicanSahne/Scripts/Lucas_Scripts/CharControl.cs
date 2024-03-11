@@ -8,6 +8,8 @@ public class CharControl : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    
+
     Animator anim;
 
    
@@ -39,9 +41,10 @@ public class CharControl : MonoBehaviour
         {
             Jump();
         }
-
-        
+            
         UpdateAnimation();
+
+
     }
 
     
