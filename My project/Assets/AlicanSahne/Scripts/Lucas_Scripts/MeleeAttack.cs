@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MeleeAttack : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class MeleeAttack : MonoBehaviour
         {
             currentTimeBtwAttack -= Time.deltaTime;
         }
-        
+
         Combos_();
     }
 
@@ -56,6 +57,7 @@ public class MeleeAttack : MonoBehaviour
 
     public void Combos_()
     {
+        // Eðer C tuþuna basýldýysa ve saldýrý yapýlabilir durumdaysa
         if (Input.GetKeyDown(KeyCode.C) && !atacakando)
         {
             atacakando = true;
@@ -93,6 +95,17 @@ public class MeleeAttack : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        }
+    }
+
+
+    public void ButtonCombo()
+    {
+        if (!atacakando)
+        {
+            Attack();
+            atacakando = true;
+            anim.SetTrigger("" + combo);
         }
     }
 }

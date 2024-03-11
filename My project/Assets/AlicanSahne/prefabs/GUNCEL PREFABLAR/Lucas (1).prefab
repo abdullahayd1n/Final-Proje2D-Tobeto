@@ -18,8 +18,9 @@ GameObject:
   - component: {fileID: 3775559716600689958}
   - component: {fileID: 6323735714676639995}
   - component: {fileID: 8568960449120537367}
-  - component: {fileID: 6503259751477200825}
   - component: {fileID: 6417323918590872885}
+  - component: {fileID: 6503259751477200825}
+  - component: {fileID: 8226564016873443040}
   m_Layer: 0
   m_Name: Lucas (1)
   m_TagString: Player
@@ -367,6 +368,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6417323918590872885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737118349541836995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e4ef0dc3f23074d98e142b471363b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
 --- !u!82 &6503259751477200825
 AudioSource:
   m_ObjectHideFlags: 0
@@ -463,7 +477,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6417323918590872885
+--- !u!114 &8226564016873443040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -472,10 +486,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2737118349541836995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e4ef0dc3f23074d98e142b471363b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 216ca43db5d098e4a86c372a51a4ecba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
+  button4: {fileID: 0}
+  button5: {fileID: 0}
 --- !u!1 &6569596738397775704
 GameObject:
   m_ObjectHideFlags: 0
