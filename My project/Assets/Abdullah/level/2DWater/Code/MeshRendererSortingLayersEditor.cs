@@ -1,52 +1,44 @@
-<<<<<<< Updated upstream
 #if UNITY_EDITOR
-=======
-#if UNÝTY_EDITOR
->>>>>>> Stashed changes
 
 using UnityEngine;
 using UnityEditor;
+using System.Collections;
 
-[CustomEditor(typeof(Renderer))] // Renderer sýnýfýný hedef alýyoruz.
+[CustomEditor(typeof(MeshRenderer))]
 
-public class RendererSortingLayersEditor : Editor
+public class MeshRendererSortingLayersEditor : Editor
 {
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
+	public override void OnInspectorGUI()
+	{
+		base.OnInspectorGUI();
 
-        Renderer renderer = target as Renderer;
+		MeshRenderer renderer = target as MeshRenderer;
 
-        EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.BeginHorizontal();
 
-        EditorGUI.BeginChangeCheck();
+		EditorGUI.BeginChangeCheck();
 
-        string name = EditorGUILayout.TextField("Sorting Layer Name", renderer.sortingLayerName);
+		string name = EditorGUILayout.TextField("Sorting Layer Name", renderer.sortingLayerName);
 
-        if (EditorGUI.EndChangeCheck())
-        {
-            renderer.sortingLayerName = name;
-        }
+		if (EditorGUI.EndChangeCheck())
+		{
+			renderer.sortingLayerName = name;
+		}
 
-        EditorGUILayout.EndHorizontal();
+		EditorGUILayout.EndHorizontal();
 
-        EditorGUILayout.BeginHorizontal();
+		EditorGUILayout.BeginHorizontal();
 
-        EditorGUI.BeginChangeCheck();
+		EditorGUI.BeginChangeCheck();
 
-        int order = EditorGUILayout.IntField("Sorting Order", renderer.sortingOrder);
+		int order = EditorGUILayout.IntField("Sorting Order", renderer.sortingOrder);
 
-        if (EditorGUI.EndChangeCheck())
-        {
-            renderer.sortingOrder = order;
-        }
+		if (EditorGUI.EndChangeCheck())
+		{
+			renderer.sortingOrder = order;
+		}
 
-<<<<<<< Updated upstream
 		EditorGUILayout.EndHorizontal();
 	}
-=======
-        EditorGUILayout.EndHorizontal();
-    }
->>>>>>> Stashed changes
 }
 #endif
