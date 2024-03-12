@@ -1,36 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MerdivenScript : MonoBehaviour
 {
-    private float vertical;
     private float speed = 8f;
     private bool isLadder;
     private bool isClimbing;
 
     [SerializeField] private Rigidbody2D rb;
-   
 
     // Update is called once per frame
     void Update()
     {
-        vertical = Input.GetAxis("Vertical");
-        if (isLadder && Mathf.Abs(vertical) > 0f)
-        {
-            isClimbing = true;
-        }
+        tirmanma();
     }
-
-    private void FixedUpdate()
+    public void tirmanma()
     {
-        if(isClimbing)
+        // Eðer dokunmatik ekran üzerindeki zýplama butonuna basýlýrsa veya basýlý tutulursa
+        if (isLadder && Input.touchCount > 0)
         {
-            rb.gravityScale = 0f;
-            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+            Touch touch = Input.GetTouch(0); // Ýlk dokunuþu al
+
+            // Eðer dokunuþ, zýplama butonu içindeyse
+            if (touch.position.x > Screen.width / 2)
+            {
+                isClimbing = true;
+            }
+            else
+            {
+                isClimbing = false;
+            }
         }
         else
         {
+            isClimbing = false;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (isClimbing)
+        {
+            // Karakter merdivenlerde yukarý doðru hareket eder
+            rb.gravityScale = 0f;
+            rb.velocity = new Vector2(rb.velocity.x, speed);
+        }
+        else
+        {
+            // Karakter normal yerçekimi etkisinde olur
             rb.gravityScale = 1.8f;
         }
     }
@@ -39,7 +54,7 @@ public class MerdivenScript : MonoBehaviour
     {
         if (collision.CompareTag("Ladder"))
         {
-            isLadder = true;    
+            isLadder = true;
         }
     }
 
@@ -47,6 +62,7 @@ public class MerdivenScript : MonoBehaviour
     {
         if (collision.CompareTag("Ladder"))
         {
+            // Merdivenlerden çýkýldýðýnda karakterin merdiven çýkma iþlemi iptal edilir
             isLadder = false;
             isClimbing = false;
         }
