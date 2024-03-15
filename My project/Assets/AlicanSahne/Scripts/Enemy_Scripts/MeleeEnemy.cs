@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
-    #region
     [Header("Attack Parameters")]
     public int minDamage = 5; // Minimum hasar
     public int maxDamage = 10; // Maksimum hasar
@@ -42,9 +41,9 @@ public class MeleeEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
     private bool playerDetected = false;
     private float detectionPauseTime = 2f;
-    #endregion
-    public GameObject[] itemDropS;
-    private bool hasDroppedItem = false; // Bayrak, bir öðenin düþürülüp düþürülmediðini kontrol eder.
+
+
+
 
 
     void Start()
@@ -146,7 +145,6 @@ public class MeleeEnemy : MonoBehaviour
         {
             anim.SetTrigger("die");
             Destroy(gameObject, removeEnemy);
-            ItemDrop();
         }
     }
 
@@ -175,17 +173,6 @@ public class MeleeEnemy : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<LucasHealth>().TakeDamage(damage);
     }
 
-    
-
-    private void ItemDrop()
-    {
-        if (!hasDroppedItem) // Eðer daha önce bir öðe düþürülmediyse devam eder.
-        {
-            int randomIndex = Random.Range(0, itemDropS.Length); // Rastgele bir index seçer.
-            Instantiate(itemDropS[randomIndex], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-            hasDroppedItem = true; // Bayraðý true olarak ayarlar, böylece bir sonraki çaðrýda baþka bir öðe düþürülmez.
-        }
-    }
 
 
 

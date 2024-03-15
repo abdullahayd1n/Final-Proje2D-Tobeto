@@ -1,7 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -10,9 +10,9 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPrefab;
     AudioSource audioSource;
 
-    private bool canShoot = true; // Atýþ yapýlabilir durumu kontrol eder
-
-    public float shootInterval = 3f; // 3 saniye aralýk
+    // Atýþ aralýðýný kontrol etmek için zamanlayýcý
+    private float nextShootTime = 0f;
+    public float shootInterval = 1f; // 3 saniye aralýk
 
     private void Start()
     {
@@ -20,21 +20,41 @@ public class PlayerShoot : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Shoot()
+    void Update()
     {
-        if (canShoot && !anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+        // Atýþ aralýðýný kontrol et ve animasyonun oynatýlma durumunu kontrol et
+        if (Time.time >= nextShootTime && Keyboard.current.tKey.wasPressedThisFrame && !anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
         {
-            anim.SetTrigger("shoot");
-            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+            Shoot(); // Atýþ yap
             audioSource.Play();
-            StartCoroutine(ResetCanShoot());
+            nextShootTime = Time.time + shootInterval; // Bir sonraki atýþ zamanýný güncelle
         }
     }
 
-    IEnumerator ResetCanShoot()
+    public void Shoot()
     {
-        canShoot = false;
-        yield return new WaitForSeconds(shootInterval);
-        canShoot = true;
+
+        anim.SetTrigger("shoot");
+        CameraShake.instance.shakeCamera(25f, 3f);
+
+
+
+
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+        StartCoroutine(ResetTimeScaleAfterAnimation());
+
     }
+
+    IEnumerator ResetTimeScaleAfterAnimation()
+    {
+        // Bu animasyonun bitiþini bekler
+        while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            yield return null;
+        }
+
+        // Animasyon bittiðinde zamaný normale çevir
+        Time.timeScale = 1f;
+    }
+
 }

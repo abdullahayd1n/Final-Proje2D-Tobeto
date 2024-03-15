@@ -8,11 +8,11 @@ public class CharControl : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
-
+    
 
     Animator anim;
 
-
+   
 
     private float horizontal;
     public float speed = 0f;
@@ -41,13 +41,13 @@ public class CharControl : MonoBehaviour
         {
             Jump();
         }
-
+            
         UpdateAnimation();
 
 
     }
 
-
+    
 
     public void Jump()
     {
@@ -90,7 +90,7 @@ public class CharControl : MonoBehaviour
         }
     }
 
-
+    
 
     private void UpdateAnimation()
     {
@@ -98,5 +98,5 @@ public class CharControl : MonoBehaviour
         anim.SetBool("walk", Mathf.Abs(horizontal) > 0 && IsGrounded()); // Yerden yürüme animasyonunu kontrol et
     }
 
-
+    
 }
