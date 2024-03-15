@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -10,9 +10,9 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPrefab;
     AudioSource audioSource;
 
-    // Atýþ aralýðýný kontrol etmek için zamanlayýcý
-    private float nextShootTime = 0f;
-    public float shootInterval = 1f; // 3 saniye aralýk
+    private bool canShoot = true; // Atýþ yapýlabilir durumu kontrol eder
+
+    public float shootInterval = 3f; // 3 saniye aralýk
 
     private void Start()
     {
@@ -20,41 +20,21 @@ public class PlayerShoot : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-        // Atýþ aralýðýný kontrol et ve animasyonun oynatýlma durumunu kontrol et
-        if (Time.time >= nextShootTime && Keyboard.current.tKey.wasPressedThisFrame && !anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
-        {
-            Shoot(); // Atýþ yap
-            audioSource.Play();
-            nextShootTime = Time.time + shootInterval; // Bir sonraki atýþ zamanýný güncelle
-        }
-    }
-
     public void Shoot()
     {
-
-        anim.SetTrigger("shoot");
-        CameraShake.instance.shakeCamera(25f, 3f);
-
-
-
-
-        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-        StartCoroutine(ResetTimeScaleAfterAnimation());
-
-    }
-
-    IEnumerator ResetTimeScaleAfterAnimation()
-    {
-        // Bu animasyonun bitiþini bekler
-        while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        if (canShoot && !anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
         {
-            yield return null;
+            anim.SetTrigger("shoot");
+            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+            audioSource.Play();
+            StartCoroutine(ResetCanShoot());
         }
-
-        // Animasyon bittiðinde zamaný normale çevir
-        Time.timeScale = 1f;
     }
 
+    IEnumerator ResetCanShoot()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(shootInterval);
+        canShoot = true;
+    }
 }
