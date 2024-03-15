@@ -19,11 +19,21 @@ TagManager:
   - 
   - Tuzak-Havuz
   - IsGrounded
+<<<<<<< Updated upstream
   - WhatIsEnemies
   - Player
   - bullet
   - TakeHeal
   - Arrow
+=======
+  - front
+  - midground
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 

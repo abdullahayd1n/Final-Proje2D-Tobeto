@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
+<<<<<<< Updated upstream
     path: Assets/melda/MainMenu.unity
     guid: 2b9e2c72da4ea4133910d004abc72e5a
   - enabled: 1
@@ -14,4 +15,35 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/AlicanSahne/Scane/Alican-Scane.unity
     guid: f7c77f9bf152c3f4a9d5d6bd210cec97
+=======
+    path: Assets/2DGamekit/Scenes/Start.unity
+    guid: 57df1e417250bc247976c2c0dc088efe
+  - enabled: 0
+    path: Assets/2DGamekit/Scenes/Zone1.unity
+    guid: a94cb8f134bf81349ad016c79b629e3d
+  - enabled: 0
+    path: Assets/2DGamekit/Scenes/Zone2.unity
+    guid: 5436c67e9267f17458b31fcdc20cd20a
+  - enabled: 0
+    path: Assets/2DGamekit/Scenes/Zone3.unity
+    guid: 4b4b0e246fc7dbb4295a38fd03241362
+  - enabled: 0
+    path: Assets/2DGamekit/Scenes/Zone4.unity
+    guid: 5b0c2d9ddd151ba489db19a4fb634327
+  - enabled: 0
+    path: Assets/2DGamekit/Scenes/Zone5.unity
+    guid: 960b12f881940d84983273421bebc695
+  - enabled: 0
+    path: Assets/2DGamekit/Scenes/UI/UIMenus.unity
+    guid: 705f1f73151a73046842d4e4ec8f514d
+  - enabled: 0
+    path: Assets/2DGamekit/Scenes/UI/Loading.unity
+    guid: ebc4647ff02971c4ba1b207af066be4d
+  - enabled: 0
+    path: Assets/NewScene.unity
+    guid: a341347ecfade124f817cac8ea56a209
+  - enabled: 1
+    path: Assets/melda/startsahnesi.unity
+    guid: bf57891720c834e478801e1d35796702
+>>>>>>> Stashed changes
   m_configObjects: {}
