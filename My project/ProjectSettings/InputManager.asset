@@ -790,11 +790,11 @@ InputManager:
     axis: 6
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Inventory
+    m_Name: Debug Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: f
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -805,4 +805,3 @@ InputManager:
     type: 2
     axis: 5
     joyNum: 0
-  m_UsePhysicalKeys: 1
