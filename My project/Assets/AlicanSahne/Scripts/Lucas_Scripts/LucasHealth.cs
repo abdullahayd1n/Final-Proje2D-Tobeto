@@ -46,9 +46,6 @@ public class LucasHealth : MonoBehaviour
         rb.isKinematic = true;
         anim.SetBool("dead", true);
         Time.timeScale = 0.35f;
-
-        //Olum Panel ekraný
-
         float animationLength = anim.GetCurrentAnimatorStateInfo(0).length;
         StartCoroutine(FallAndStop(animationLength));
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
