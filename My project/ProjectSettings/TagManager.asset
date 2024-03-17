@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Ladder
+  - WhatIsEnemies
+>>>>>>> parent of 454528d (Damage eklendi)
   layers:
   - Default
   - TransparentFX
