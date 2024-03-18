@@ -1,0 +1,586 @@
+fileFormatVersion: 2
+guid: 5a5c23caa3636e04495fe94c0f0daaae
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 90
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 513
+        width: 65
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e755efbe06f7c934989a9a885f9d8b0c
+      internalID: 1100253294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 512
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fbf6feb5874e64385f6eef26c1683b
+      internalID: -959212859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 511
+        width: 75
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b537a57690e9234fb71d9cb082ac5e9
+      internalID: -420459442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 507
+        width: 90
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85268e67c2dd28840b554921bbe894ec
+      internalID: 658863327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 511
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9960b154cc8b3cb4685842e786380394
+      internalID: -2125898305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 511
+        width: 74
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a32e3edcd542794bbba7737db46e711
+      internalID: -1891745526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 513
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ecc3122e00ab9149a39f0dfb5105fcd
+      internalID: 1530045412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 512
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec274b8c49e7539469770fc42e6d9e3d
+      internalID: -426793698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_9
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 512
+        width: 92
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3027adbc05722874f9d5dfbd539913e7
+      internalID: -1024343119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_10
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 512
+        width: 93
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11dc4db9ebe00440aae878005c9337b
+      internalID: -1895274822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_11
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 264
+        width: 332
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d1a386acf645141b7dd6f52e327731
+      internalID: 1464216317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_12
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 264
+        width: 332
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4cd2a00d185fe147bd9b33a3a53e5ad
+      internalID: -1068198434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_13
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 384
+        width: 314
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f84e5842a8d46440ae48380500ae49e
+      internalID: -1991554280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_14
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 255
+        width: 313
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0484f3240cc22bb418bd92aaa5beda97
+      internalID: -1482147625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_15
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 190
+        width: 542
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192b3e6b766f3c94da97e51797e9e470
+      internalID: 1843516586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_16
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 191
+        width: 543
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5dc2f755ebba69478bc06208204f1f3
+      internalID: 1308041762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_17
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 67
+        width: 198
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01df0c57a9a28b4bae9b070863f55d4
+      internalID: 814500630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_18
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 67
+        width: 191
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781ffe08b670cf843a6bd13483690a23
+      internalID: 293054991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_19
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 68
+        width: 192
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0725324a43abd46a7ea7f139421674
+      internalID: -2086244170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_20
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 68
+        width: 218
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e45c10904187c4d8d30635797cf250
+      internalID: 2096600637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simsek-Photoroom.png-Photoroom_21
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 66
+        width: 220
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c4dad7f954b9648a8ba1a638064dfc
+      internalID: 1247200629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Simsek-Photoroom.png-Photoroom_0: 1100253294
+      Simsek-Photoroom.png-Photoroom_1: -959212859
+      Simsek-Photoroom.png-Photoroom_10: -1895274822
+      Simsek-Photoroom.png-Photoroom_11: 1464216317
+      Simsek-Photoroom.png-Photoroom_12: -1068198434
+      Simsek-Photoroom.png-Photoroom_13: -1991554280
+      Simsek-Photoroom.png-Photoroom_14: -1482147625
+      Simsek-Photoroom.png-Photoroom_15: 1843516586
+      Simsek-Photoroom.png-Photoroom_16: 1308041762
+      Simsek-Photoroom.png-Photoroom_17: 814500630
+      Simsek-Photoroom.png-Photoroom_18: 293054991
+      Simsek-Photoroom.png-Photoroom_19: -2086244170
+      Simsek-Photoroom.png-Photoroom_2: 1372276840
+      Simsek-Photoroom.png-Photoroom_20: 2096600637
+      Simsek-Photoroom.png-Photoroom_21: 1247200629
+      Simsek-Photoroom.png-Photoroom_3: -420459442
+      Simsek-Photoroom.png-Photoroom_4: 658863327
+      Simsek-Photoroom.png-Photoroom_5: -2125898305
+      Simsek-Photoroom.png-Photoroom_6: -1891745526
+      Simsek-Photoroom.png-Photoroom_7: 1530045412
+      Simsek-Photoroom.png-Photoroom_8: -426793698
+      Simsek-Photoroom.png-Photoroom_9: -1024343119
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

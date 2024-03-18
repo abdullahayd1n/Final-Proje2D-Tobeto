@@ -44,7 +44,9 @@ public class RangedEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
     private bool playerDetected = false;
     private float detectionPauseTime = 2f;
-
+   
+    public GameObject[] itemDropS;
+    private bool hasDroppedItem = false;
 
 
 
@@ -164,6 +166,7 @@ public class RangedEnemy : MonoBehaviour
         {
             anim.SetTrigger("die");
             Destroy(gameObject, removeEnemy);
+            ItemDrop();
         }
     }
 
@@ -183,7 +186,15 @@ public class RangedEnemy : MonoBehaviour
         alert.SetActive(false);
     }
 
-
+    private void ItemDrop()
+    {
+        if (!hasDroppedItem) // Eðer daha önce bir öðe düþürülmediyse devam eder.
+        {
+            int randomIndex = Random.Range(0, itemDropS.Length); // Rastgele bir index seçer.
+            Instantiate(itemDropS[randomIndex], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            hasDroppedItem = true; // Bayraðý true olarak ayarlar, böylece bir sonraki çaðrýda baþka bir öðe düþürülmez.
+        }
+    }
 
 
 }
