@@ -13,12 +13,23 @@ public class LucasHealth : MonoBehaviour
     public HealthBar healthBar;
     public GameObject popUpDamagePrefab;
     public TMP_Text popUpText;
-
+    [SerializeField] GameObject DeadMenu;
+    private bool isPaused = false;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth((int)maxHealth); // maxHealth int'ten float'a çevrildi, bu yüzden (int) ile dönüþtürüldü.
+        
+    }
+
+    void Update()
+    {
+        if (isDead && isPaused)
+        {
+            DeadMenu.SetActive(true);
+            
+        }
     }
 
     public void TakeDamage(float damageAmount) // int yerine float olarak deðiþtirildi
@@ -45,12 +56,18 @@ public class LucasHealth : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         anim.SetBool("dead", true);
-        Time.timeScale = 0.35f;
         float animationLength = anim.GetCurrentAnimatorStateInfo(0).length;
         StartCoroutine(FallAndStop(animationLength));
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+        Pause();
     }
 
+    public void Pause()
+    {
+        DeadMenu.SetActive(true);
+        Time.timeScale = 0.58f;
+        isPaused = true;
+    }
 
     IEnumerator FallAndStop(float duration)
     {
