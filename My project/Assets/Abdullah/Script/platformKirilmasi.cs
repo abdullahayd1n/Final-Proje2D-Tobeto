@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class platformKirilmasi : MonoBehaviour
 {
-    private float fallDealt = 0.1f;
+    public float fallDealt = 0.1f;
     private float destroyDealy=0.4f;
 
     [SerializeField] private Rigidbody2D rb;
