@@ -17,7 +17,7 @@ public class itmeScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("itme"))
+        if (collision.gameObject.CompareTag("itme"))
         {
             anim.SetBool("itme", true);
         }
@@ -29,7 +29,7 @@ public class itmeScript : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("itme"))
+        if (collision.gameObject.CompareTag("itme"))
         {
             anim.SetBool("itme", false);
         }
@@ -37,6 +37,7 @@ public class itmeScript : MonoBehaviour
         {
             anim.SetBool("walk", true);
         }
+
     }
 }
 
