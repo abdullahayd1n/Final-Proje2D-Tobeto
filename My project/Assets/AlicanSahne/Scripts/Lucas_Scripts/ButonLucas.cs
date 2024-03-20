@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -16,14 +17,22 @@ public class ButonLucas : MonoBehaviour
     public Text score;
     private int scoreValue = 0;
 
+    public Text yadigarScore;
+    private int yadigarValue = 0;
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("ButonLucas"))
+        if (PlayerPrefs.HasKey("ButonLucas_Yadigar"))
         {
-            scoreValue = PlayerPrefs.GetInt("ButonLucas");
+            yadigarValue = PlayerPrefs.GetInt("ButonLucas_Yadigar");
+            yadigarScore.text = " " + yadigarValue;
         }
-        score.text = " " + scoreValue;
+        if (PlayerPrefs.HasKey("ButonLucas_Coins"))
+        {
+            scoreValue = PlayerPrefs.GetInt("ButonLucas_Coins");
+            score.text = " " + scoreValue;
+        }
     }
+
 
     private void Update()
     {
@@ -101,18 +110,27 @@ public class ButonLucas : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Coins")
+        if (collision.gameObject.tag == "Yadigar")
+        {
+            collision.gameObject.SetActive(false);
+            yadigarValue += 1;
+            yadigarScore.text = " " + yadigarValue; // Puaný güncelle
+            PlayerPrefs.SetInt("ButonLucas_Yadigar", yadigarValue); // Yadigar coin puanýný sakla
+        }
+        else if (collision.gameObject.tag == "Coins")
         {
             collision.gameObject.SetActive(false);
             scoreValue += 1;
             score.text = " " + scoreValue; // Puaný güncelle
-            //AudioManager.Instance.PlaySFX("CoinSound");
-            PlayerPrefs.SetInt("ButonLucas", scoreValue);
+            PlayerPrefs.SetInt("ButonLucas_Coins", scoreValue); // Normal coin puanýný sakla
         }
     }
 
+
+
     void SetScore()
     {
+        yadigarScore.text = " " + yadigarValue;
         score.text = " " + scoreValue;
 
     }

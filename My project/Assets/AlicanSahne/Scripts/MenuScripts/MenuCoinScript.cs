@@ -7,8 +7,8 @@ public class MenuCoinScript : MonoBehaviour
 
     void Start()
     {
-        // PlayerPrefs'tan toplanan altýn sayýsýný al ve metin alanýna ata
-        int collectedCoins = PlayerPrefs.GetInt("ButonLucas", 0);
+        int collectedCoins = PlayerPrefs.GetInt("ButonLucas_Coins", 0);
         coinText.text = " " + collectedCoins.ToString();
     }
+
 }
