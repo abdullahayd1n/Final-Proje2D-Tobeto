@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ButonLucas : MonoBehaviour
 {
@@ -11,6 +12,18 @@ public class ButonLucas : MonoBehaviour
     public float jumpingPower = 6f;
     private bool isFacingRight = true;
     private bool isMoving = false;
+
+    public Text score;
+    private int scoreValue = 0;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("ButonLucas"))
+        {
+            scoreValue = PlayerPrefs.GetInt("ButonLucas");
+        }
+        score.text = " " + scoreValue;
+    }
 
     private void Update()
     {
@@ -86,4 +99,21 @@ public class ButonLucas : MonoBehaviour
         anim.SetBool("walk", isMoving && IsGrounded());
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coins")
+        {
+            collision.gameObject.SetActive(false);
+            scoreValue += 1;
+            score.text = " " + scoreValue; // Puaný güncelle
+            //AudioManager.Instance.PlaySFX("CoinSound");
+            PlayerPrefs.SetInt("ButonLucas", scoreValue);
+        }
+    }
+
+    void SetScore()
+    {
+        score.text = " " + scoreValue;
+
+    }
 }
