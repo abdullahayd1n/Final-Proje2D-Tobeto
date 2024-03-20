@@ -62,9 +62,8 @@ public class LucasHealth : MonoBehaviour
         anim.SetBool("dead", true);
 
         float animationLength = anim.GetCurrentAnimatorStateInfo(0).length;
-        StartCoroutine(FallAndStop(animationLength));
+        StartCoroutine(FallAndStopAndOpenMenu(animationLength)); // Coroutine'u güncelledik.
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
-        Pause();
     }
 
     public void Pause()
@@ -74,7 +73,7 @@ public class LucasHealth : MonoBehaviour
         isPaused = true;
     }
 
-    IEnumerator FallAndStop(float duration)
+    IEnumerator FallAndStopAndOpenMenu(float duration)
     {
         float elapsedTime = 0f;
         float startHeight = transform.position.y;
@@ -87,6 +86,10 @@ public class LucasHealth : MonoBehaviour
         }
 
         Time.timeScale = 0f;
+
+        // Menünün açýlmasý
+        isPaused = true;
+        DeadMenu.SetActive(true);
     }
 
     public void RespawnAtPosition(Vector3 position)
