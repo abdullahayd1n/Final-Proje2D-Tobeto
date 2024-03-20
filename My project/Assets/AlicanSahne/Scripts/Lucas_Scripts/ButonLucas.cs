@@ -85,4 +85,5 @@ public class ButonLucas : MonoBehaviour
         anim.SetBool("jump", !IsGrounded());
         anim.SetBool("walk", isMoving && IsGrounded());
     }
+
 }

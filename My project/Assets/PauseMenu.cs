@@ -1,5 +1,3 @@
-// PauseMenu.cs
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settings;
     private bool isPaused = false;
+    public LucasHealth lucasHealth;
 
     public void Pause()
     {
@@ -31,7 +30,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Checkpoint konumunu al
+        Vector3 respawnPosition = Vector3.zero; // Varsayýlan bir konum
+
+        // Karakterin respawn noktasýna geri döndür
+        lucasHealth.RespawnAtPosition(respawnPosition);
+
+        // Sahneyi yeniden yükle
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        // Zaman ölçeðini varsayýlan deðere geri getir
         Time.timeScale = 1;
     }
 

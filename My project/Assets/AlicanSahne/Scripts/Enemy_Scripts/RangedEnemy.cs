@@ -44,7 +44,7 @@ public class RangedEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
     private bool playerDetected = false;
     private float detectionPauseTime = 2f;
-   
+
     public GameObject[] itemDropS;
     private bool hasDroppedItem = false;
 
@@ -90,7 +90,11 @@ public class RangedEnemy : MonoBehaviour
             enemyPatrol.enabled = !PlayerInSight();
 
         // Düþmaný oyuncuya doðru döndür
-        transform.localScale = new Vector2(target.position.x > transform.position.x ? 1f : -1f, 1f);
+        if (target != null)
+        {
+            transform.localScale = new Vector2(target.position.x > transform.position.x ? 1f : -1f, 1f);
+        }
+
     }
 
     private void ShootArrow()
@@ -104,7 +108,7 @@ public class RangedEnemy : MonoBehaviour
 
         // Okun oluþturulduðu noktadan oyuncuya doðru hareket etmesini saðladýktan sonra bir süre sonra yok et
         Destroy(arrow, arrowLifetime);
-        
+
     }
 
     // Animator içindeki event olarak atýlacak
