@@ -12,7 +12,7 @@ public class CharControl : MonoBehaviour
 
     Animator anim;
 
-
+    
 
     private float horizontal;
     public float speed = 0f;
