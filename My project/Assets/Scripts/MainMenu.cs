@@ -21,10 +21,12 @@ public class MainMenuS : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
+        AudioManager.Instance.PlaySFX("Play");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        AudioManager.Instance.PlaySFX("Quit");
     }
 }
