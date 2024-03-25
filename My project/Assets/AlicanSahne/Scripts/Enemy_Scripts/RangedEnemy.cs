@@ -101,7 +101,7 @@ public class RangedEnemy : MonoBehaviour
     {
         // Ok prefab'ýný shootPoint'ten fýrlat
         GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, Quaternion.identity);
-
+        AudioManager.Instance.PlaySFX("Arrow");
         // Okun oluþturulduðu noktadan oyuncuya doðru hareket etmesini saðla
         Vector2 direction = (target.position - shootPoint.position).normalized;
         arrow.GetComponent<Rigidbody2D>().velocity = direction * arrowSpeed;
@@ -164,15 +164,20 @@ public class RangedEnemy : MonoBehaviour
 
 
 
+    private bool isDead = false; // Bayrak, karakterin öldüðü tespit edildiðinde true olacak.
+
     private void KillEnemy()
     {
-        if (enemyHealth <= 0)
+        if (enemyHealth <= 0 && !isDead) // Karakter daha önce ölmediyse ve saðlýk sýfýr veya daha azsa...
         {
-            anim.SetTrigger("die");
-            Destroy(gameObject, removeEnemy);
-            ItemDrop();
+            isDead = true; // Artýk ölü olduðunu iþaretleriz.
+            anim.SetTrigger("die"); // Ölüm animasyonunu oynatýrýz.
+            Destroy(gameObject, removeEnemy); // Belirli bir süre sonra karakteri yok ederiz.
+            ItemDrop(); // Gerekirse bir öðe düþürürüz.
+            AudioManager.Instance.PlaySFX("Enemy_Die"); // Ölüm sesini oynatýrýz.
         }
     }
+
 
     private IEnumerator PlayerDetected()
     {

@@ -106,6 +106,7 @@ public class MeleeAttack : MonoBehaviour
             Attack();
             atacakando = true;
             anim.SetTrigger("" + combo);
+            AudioManager.Instance.PlaySFX("Attack");
         }
     }
 }
