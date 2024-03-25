@@ -60,7 +60,7 @@ public class LucasHealth : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         anim.SetBool("dead", true);
-
+        AudioManager.Instance.PlaySFX("die");
         float animationLength = anim.GetCurrentAnimatorStateInfo(0).length;
         StartCoroutine(FallAndStopAndOpenMenu(animationLength)); // Coroutine'u güncelledik.
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
