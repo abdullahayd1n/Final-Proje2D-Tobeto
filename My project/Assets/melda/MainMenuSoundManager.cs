@@ -68,4 +68,20 @@ public class MainMenuSoundManager : MonoBehaviour
     {
         sfxSoucse.volume = volume;
     }
+
+    public void PlayButtonSound()
+    {
+        MainMenuSoundManager.Instance.PlaySFX("Options");
+    }
+
+    public void CancelButtonSound()
+    {
+        MainMenuSoundManager.Instance.PlaySFX("Cancel");
+
+    }
+
+    public void FullScreenButtonSound()
+    {
+        MainMenuSoundManager.Instance.PlaySFX("FullScreen");
+    }
 }

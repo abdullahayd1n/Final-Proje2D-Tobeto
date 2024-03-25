@@ -68,4 +68,46 @@ public class AudioManager : MonoBehaviour
     {
         sfxSoucse.volume = volume;
     }
+
+    public void PauseResumeButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("PauseResume");
+    }
+
+    public void PauseOptionsButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("PauseOptions");
+
+    }
+
+    public void PauseMainMenuButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("PauseMainMenu");
+        Debug.Log("PauseMenu");
+    }
+    public void PauseRestartButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("PauseRestart");
+    }
+
+    public void DeadMainMenuButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("DeadMainMenu");
+    }
+    public void DeadRestartButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("DeadRestart");
+    
+    }
+
+    public void PanelCancelButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("PanelCancel");
+    }
+    public void PanelFullScreenButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("PanelFullScreen");
+    }
+
+
 }
