@@ -27,12 +27,12 @@ public class particlScript : MonoBehaviour
     {
         // Tetikleyici objenin bir RigidBody2D bileþeni var mý diye kontrol edilir
         Rigidbody2D otherRigidbody = collision.collider.GetComponent<Rigidbody2D>();
-        if (otherRigidbody != null)
+        if (collision.contacts.Length > 0)
         {
-            // Yakýn temas noktasý bulunur
+            // Ýlk temas noktasýna eriþ ve kullan
             Vector2 contactPoint = collision.contacts[0].point;
 
-            // splashParticle objesi instantiate edilir
+            // splashParticle objesini instantiate et
             Instantiate(splashParticle, contactPoint, Quaternion.identity);
         }
     }

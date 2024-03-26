@@ -2,25 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platformKirilmasi : MonoBehaviour
+public class KaraktmaZeminDestroy : MonoBehaviour
 {
     public float fallDealt = 0.1f;
-    [SerializeField] private float destroyDealy=0.4f;
-
+    [SerializeField] private float destroyDealy = 0f;
     [SerializeField] private Rigidbody2D rb;
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Fall());
         }
-        else if (collision.gameObject.CompareTag("Diken"))
-        {
-            StartCoroutine(Fall());
-        }
     }
+
     private IEnumerator Fall()
     {
         yield return new WaitForSeconds(fallDealt);

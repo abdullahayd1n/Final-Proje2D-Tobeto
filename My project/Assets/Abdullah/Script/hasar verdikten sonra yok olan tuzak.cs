@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class hasarverdiktensonrayokolantuzak : MonoBehaviour
@@ -11,7 +12,7 @@ public class hasarverdiktensonrayokolantuzak : MonoBehaviour
         DamageAndDestroy(collision);
         if (collision.gameObject.layer == LayerMask.NameToLayer("IsGround"))
         {
-            Destroy(gameObject);
+            OnDestroy();
         }
     }
     
@@ -25,9 +26,14 @@ public class hasarverdiktensonrayokolantuzak : MonoBehaviour
             collision.gameObject.GetComponent<LucasHealth>().TakeDamage(damage);
 
             // Objeyi yok etme
-            Destroy(gameObject);
+            OnDestroy();
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(gameObject);
     }
 
 }
