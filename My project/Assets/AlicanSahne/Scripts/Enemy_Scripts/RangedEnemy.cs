@@ -92,7 +92,7 @@ public class RangedEnemy : MonoBehaviour
         // Düþmaný oyuncuya doðru döndür
         if (target != null)
         {
-            transform.localScale = new Vector2(target.position.x > transform.position.x ? 1f : -1f, 1f);
+            transform.localScale = new Vector2(target.position.x > transform.position.x ? 1f : -0.8f, 0.8f);
         }
 
     }

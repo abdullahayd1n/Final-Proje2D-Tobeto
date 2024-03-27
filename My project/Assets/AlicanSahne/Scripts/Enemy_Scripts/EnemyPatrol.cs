@@ -39,7 +39,6 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Update()
     {
-
         // Eðer enemy ve sol ve sað sýnýr noktalarý null deðilse devam et
         if (enemy != null && leftEdge != null && rightEdge != null)
         {
@@ -57,8 +56,14 @@ public class EnemyPatrol : MonoBehaviour
                 else
                     DirectionChange();
             }
+
+            // Belirli bir yöne doðru hareket ederken boyutu ayarla
+            float direction = movingLeft ? -1 : 1;
+            enemy.localScale = new Vector3(0.8f * direction, initScale.y, initScale.z);
         }
     }
+
+
 
 
 
@@ -76,10 +81,12 @@ public class EnemyPatrol : MonoBehaviour
         idleTimer = 0; // Hareketsizlik zamanlayýcýsýný sýfýrla
         anim.SetBool("moving", true); // Animator'daki "moving" parametresini true olarak ayarla
 
-        // Düþmaný belirli bir yöne dönme
-        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * direction, initScale.y, initScale.z);
+        // Düþmanýn boyutunu belirli bir boyuta (0.8) ayarla, yönüne göre
+        enemy.localScale = new Vector3(0.8f * direction, initScale.y, initScale.z);
 
         // Belirli bir yöne hareket etme
-        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * direction * speed, enemy.position.y, enemy.position.z);
+        float moveSpeed = speed * direction; // Hareket hýzý, yön ile çarpýlýr
+        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * moveSpeed, enemy.position.y, enemy.position.z);
     }
+
 }

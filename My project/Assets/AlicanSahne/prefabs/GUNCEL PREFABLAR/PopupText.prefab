@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5668527283435883316}
   - component: {fileID: 5594618113005950199}
   - component: {fileID: 2603812973956817473}
-  - component: {fileID: -2552745701853124631}
+  - component: {fileID: 8511898377065840623}
   m_Layer: 0
   m_Name: PopupText
   m_TagString: Untagged
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  - {fileID: -8530688433991205862, guid: 62fcb3e7ff40143c18ccda3c4942c95b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,10 +101,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 59
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62fcb3e7ff40143c18ccda3c4942c95b, type: 2}
+  m_sharedMaterial: {fileID: -8530688433991205862, guid: 62fcb3e7ff40143c18ccda3c4942c95b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -194,7 +195,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2552745701853124631
+--- !u!114 &8511898377065840623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 32528209478729553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c4cb1c2501e44446afd920d7b187081, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b230944afe5a0843ab91efc19a2e9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyTime: 1
+  destructTime: 1
