@@ -9,7 +9,7 @@ public class ButonLucas : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public Animator anim;
-    public float speed = 5f;
+    public float speed = 0f;
     public float jumpingPower = 6f;
     private bool isFacingRight = true;
     private bool isMoving = false;
@@ -27,13 +27,20 @@ public class ButonLucas : MonoBehaviour
     // Oyun baþlangýcýnda çalýþacak metod
     private void Awake()
     {
-        // Yadigar ve normal puanlarý yükle
-        yadigarValue = PlayerPrefs.GetInt("ButonLucas_Yadigar", 0);
-        yadigarScore.text = " " + yadigarValue;
-
-        scoreValue = PlayerPrefs.GetInt("ButonLucas_Coins", 0);
-        score.text = " " + scoreValue;
+        // Yadigar puaný kaydedilmiþse yükle ve ekrana yaz
+        if (PlayerPrefs.HasKey("ButonLucas_Yadigar"))
+        {
+            yadigarValue = PlayerPrefs.GetInt("ButonLucas_Yadigar");
+            yadigarScore.text = " " + yadigarValue;
+        }
+        // Normal puan kaydedilmiþse yükle ve ekrana yaz
+        if (PlayerPrefs.HasKey("ButonLucas_Coins"))
+        {
+            scoreValue = PlayerPrefs.GetInt("ButonLucas_Coins");
+            score.text = " " + scoreValue;
+        }
     }
+
 
     private void Update()
     {
@@ -50,10 +57,12 @@ public class ButonLucas : MonoBehaviour
         Move(-1f);
     }
 
+
     public void MoveRight()
     {
         Move(1f);
     }
+
 
     public void StopMoving()
     {
@@ -67,6 +76,7 @@ public class ButonLucas : MonoBehaviour
         float horizontal = direction * speed;
         rb.velocity = new Vector2(horizontal, rb.velocity.y);
 
+        // Karakterin yönünü çevir
         if (!isFacingRight && direction > 0f)
         {
             Flip();
@@ -76,6 +86,7 @@ public class ButonLucas : MonoBehaviour
             Flip();
         }
 
+        // Hareket ediyorsa ve daha önce hareket etmiyorsa animasyonu baþlat
         if (!isMoving)
         {
             isMoving = true;
@@ -102,28 +113,48 @@ public class ButonLucas : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         isFacingRight = !isFacingRight;
     }
-
     private void UpdateAnimation()
     {
         anim.SetBool("jump", !IsGrounded());
         anim.SetBool("walk", isMoving && IsGrounded());
     }
 
+    // Tetikleyici ile etkileþime girildiðinde çalýþacak metod
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Yadigar"))
+        // Yadigar objesi ile etkileþime girildiyse
+        if (collision.gameObject.tag == "Yadigar")
         {
+            // Yadigar objesini devre dýþý býrak
             collision.gameObject.SetActive(false);
-            yadigarValue++;
+            // Yadigar puanýný artýr
+            yadigarValue += 1;
+            // Yadigar puanýný ekrana yaz
             yadigarScore.text = " " + yadigarValue;
+            // Yadigar puanýný kaydet
             PlayerPrefs.SetInt("ButonLucas_Yadigar", yadigarValue);
         }
-        else if (collision.gameObject.CompareTag("Coins"))
+        // Normal para objesi ile etkileþime girildiyse
+        else if (collision.gameObject.tag == "Coins")
         {
+            // Para objesini devre dýþý býrak
             collision.gameObject.SetActive(false);
-            scoreValue++;
+            // Puaný artýr
+            scoreValue += 1;
+            // Puaný ekrana yaz
             score.text = " " + scoreValue;
+            // Puaný kaydet
             PlayerPrefs.SetInt("ButonLucas_Coins", scoreValue);
         }
     }
+
+    // Puanlarý güncelleyen metod
+    void SetScore()
+    {
+        // Yadigar puanýný yadigarScore metin alanýnda göstermek için deðeri ayarla
+        yadigarScore.text = " " + yadigarValue;
+        // Puaný score metin alanýnda göstermek için deðeri ayarla
+        score.text = " " + scoreValue;
+    }
+
 }
