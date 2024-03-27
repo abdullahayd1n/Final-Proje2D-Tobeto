@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/melda/MainMenu.unity
     guid: 2b9e2c72da4ea4133910d004abc72e5a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Abdullah/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
