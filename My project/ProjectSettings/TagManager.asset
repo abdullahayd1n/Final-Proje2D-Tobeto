@@ -12,6 +12,7 @@ TagManager:
   - itme
   - CheckPoint
   - Diken
+  - watersound
   layers:
   - Default
   - TransparentFX
