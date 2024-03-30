@@ -12,6 +12,7 @@ TagManager:
   - itme
   - CheckPoint
   - Diken
+  - ItilecekNesne
   layers:
   - Default
   - TransparentFX
