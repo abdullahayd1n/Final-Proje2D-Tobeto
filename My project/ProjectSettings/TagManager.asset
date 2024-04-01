@@ -14,19 +14,18 @@ TagManager:
   - Diken
   - ItilecekNesne
   - watersound
-8cbc436acc66ecb87a8008932489bcfb00e90127
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - IsGround
   - Water
   - UI
-  - IsGround
-  - Enemy
-  - itme
-  - Ladder
-  - tuzak
+  - Player
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -51,7 +50,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Canas
-    uniqueID: 2705204615
     locked: 0
