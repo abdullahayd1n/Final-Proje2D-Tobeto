@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Abdullah/magara.unity
     guid: d11a1a22075c944fbaf7d59173da58c8
+  - enabled: 1
+    path: Assets/Abdullah/SonSahne.unity
+    guid: e4c7060a465670543ae73de752847f4e
   m_configObjects: {}
