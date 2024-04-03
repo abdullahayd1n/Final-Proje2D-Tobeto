@@ -16,6 +16,10 @@ public class MainMenu : MonoBehaviour
     Application.Quit();
     Debug.Log("oyun bitti");
    }
+    public void GoToMainMenu()
+    {
 
-  
+        SceneManager.LoadSceneAsync(0); // Ana menü sahnesine geç
+    }
+
 }

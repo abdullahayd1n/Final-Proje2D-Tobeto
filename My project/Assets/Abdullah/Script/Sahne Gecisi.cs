@@ -15,7 +15,7 @@ public class SahneGecisi : MonoBehaviour
         {
             virtualCamera.Follow = null; // CinemachineVirtualCamera'nýn follow deðeri None olacak
             isTriggered = true;
-            Invoke("ChangeScene", 2f); // 2 saniye sonra sahne deðiþecek
+            Invoke("ChangeScene", 1f); // 2 saniye sonra sahne deðiþecek
         }
     }
 
