@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class SahneGecisi : MonoBehaviour
 {
     public CinemachineVirtualCamera virtualCamera;
+    public Canvas[] canvasesToDisable; // Kapamak istediðiniz Canvas'leri buradan sürükleyip býrakabilirsiniz
     private bool isTriggered = false;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,13 +17,21 @@ public class SahneGecisi : MonoBehaviour
         {
             virtualCamera.Follow = null; // CinemachineVirtualCamera'nýn follow deðeri None olacak
             isTriggered = true;
-            Invoke("ChangeScene", 1f); // 2 saniye sonra sahne deðiþecek
+            // Canvas'leri kapat
+            DisableCanvases();
+
+            // Sahne deðiþimini baþlat
+            Invoke("ChangeScene", +3f); // Hareket süresine 3 saniye ekleyerek sahne deðiþimini geciktiriyoruz
         }
     }
 
-    public void GoToMainMenu()
+    private void DisableCanvases()
     {
-        SceneManager.LoadScene("MainMenu"); // Ana menü sahnesine geç
+        // Tüm belirtilen Canvas'leri etkisiz hale getir
+        foreach (Canvas canvas in canvasesToDisable)
+        {
+            canvas.enabled = false;
+        }
     }
     private void ChangeScene()
     {
