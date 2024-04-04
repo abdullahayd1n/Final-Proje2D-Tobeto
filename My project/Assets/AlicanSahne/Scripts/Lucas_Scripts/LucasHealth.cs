@@ -12,14 +12,19 @@ public class LucasHealth : MonoBehaviour
     public HealthBar healthBar;
     public GameObject popUpDamagePrefab;
     public TMP_Text popUpText;
+<<<<<<< Updated upstream
     public GameObject DeadMenu;
     private bool isPaused = false;
+=======
+
+>>>>>>> Stashed changes
 
     private Vector3 respawnPosition;
 
     void Start()
     {
         currentHealth = maxHealth;
+<<<<<<< Updated upstream
         healthBar.SetMaxHealth((int)maxHealth);
     }
 
@@ -29,6 +34,9 @@ public class LucasHealth : MonoBehaviour
         {
             DeadMenu.SetActive(true);
         }
+=======
+        healthBar.SetMaxHealth((int)maxHealth); // maxHealth int'ten float'a çevrildi, bu yüzden (int) ile dönüþtürüldü.
+>>>>>>> Stashed changes
     }
 
     public void SetRespawnPoint(Vector3 point)
@@ -60,18 +68,16 @@ public class LucasHealth : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         anim.SetBool("dead", true);
+<<<<<<< Updated upstream
         AudioManager.Instance.PlaySFX("die");
+=======
+        Time.timeScale = 0.35f;
+>>>>>>> Stashed changes
         float animationLength = anim.GetCurrentAnimatorStateInfo(0).length;
         StartCoroutine(FallAndStopAndOpenMenu(animationLength)); // Coroutine'u güncelledik.
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
 
-    public void Pause()
-    {
-        DeadMenu.SetActive(true);
-        Time.timeScale = 0.58f;
-        isPaused = true;
-    }
 
     IEnumerator FallAndStopAndOpenMenu(float duration)
     {

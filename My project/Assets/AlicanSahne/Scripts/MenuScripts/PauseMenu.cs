@@ -8,6 +8,21 @@ public class PauseMenu : MonoBehaviour
     private bool isPaused = false;
     public LucasHealth lucasHealth;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
     public void Pause()
     {
         pauseMenu.SetActive(true);
