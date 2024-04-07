@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
    public void PlayGame()
    {
     MainMenuSoundManager.Instance.PlaySFX("Play");
-    SceneManager.LoadSceneAsync(1);
-   }
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
    public void QuitGame()
    {
     MainMenuSoundManager.Instance.PlaySFX("Quit");
@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     public void GoToMainMenu()
     {
 
-        SceneManager.LoadSceneAsync(0); // Ana menü sahnesine geç
+        SceneManager.LoadSceneAsync("MainMenu"); // Ana menü sahnesine geç
     }
 
 }
