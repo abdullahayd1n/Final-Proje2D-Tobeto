@@ -14,6 +14,7 @@ TagManager:
   - Diken
   - ItilecekNesne
   - watersound
+  - jumpplants
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - UI
   - Player
   - tuzak
-  - 
+  - WhatIsEnemies
   - 
   - 
   - 

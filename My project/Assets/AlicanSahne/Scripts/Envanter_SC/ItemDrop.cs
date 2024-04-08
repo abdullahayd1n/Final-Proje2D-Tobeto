@@ -8,8 +8,8 @@ public class ItemDrop : MonoBehaviour
     public float dropForce = 5F;
 
      void Start()
-    {
-       itemRb = GetComponent<Rigidbody2D>();
+     {
+        itemRb = GetComponent<Rigidbody2D>();
         itemRb.AddForce(Vector2.up * dropForce, ForceMode2D.Impulse);
-    }
+     }
 }

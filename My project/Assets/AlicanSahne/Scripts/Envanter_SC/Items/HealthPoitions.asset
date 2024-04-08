@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HealthPoitions
   m_EditorClassIdentifier: 
   itemName: HealthPoitions
-  itemSprite: {fileID: 21300000, guid: 841ccd93826e82b42952411d2be024e5, type: 3}
+  itemSprite: {fileID: 21300000, guid: 5359a242d7878b248813502caafa3ace, type: 3}
