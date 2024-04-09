@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/melda/MainMenu.unity
+    path: Assets/Levels/MainMenu.unity
     guid: 2b9e2c72da4ea4133910d004abc72e5a
   - enabled: 1
-    path: Assets/Abdullah/Level1.unity
+    path: Assets/Levels/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Abdullah/magara.unity
+    path: Assets/Levels/magara.unity
     guid: d11a1a22075c944fbaf7d59173da58c8
   - enabled: 1
-    path: Assets/Abdullah/SonSahne.unity
+    path: Assets/Levels/SonSahne.unity
     guid: e4c7060a465670543ae73de752847f4e
   m_configObjects: {}
