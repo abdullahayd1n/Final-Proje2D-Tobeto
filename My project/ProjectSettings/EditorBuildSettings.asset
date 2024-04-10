@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/SonSahne.unity
     guid: e4c7060a465670543ae73de752847f4e
+  - enabled: 1
+    path: Assets/Levels/Seviyeler.unity
+    guid: da38652f56add477f91fa480ef530968
   m_configObjects: {}
