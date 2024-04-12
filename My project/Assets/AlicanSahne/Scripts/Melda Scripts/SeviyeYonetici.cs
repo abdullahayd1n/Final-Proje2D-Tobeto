@@ -30,4 +30,11 @@ public class SeviyeYonetici : MonoBehaviour
         SceneManager.LoadScene("Level1");
 
     }
+
+    public void Level2()
+
+    {
+        SceneManager.LoadScene("magara");
+
+    }
 }
