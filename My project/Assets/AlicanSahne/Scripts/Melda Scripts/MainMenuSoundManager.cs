@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class MainMenuSoundManager : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class MainMenuSoundManager : MonoBehaviour
 
     public Sound[] musicSounds, sfxSound;
     public AudioSource musicSource, sfxSoucse;
+
+    public Slider _sfxSlider;
+
+
 
     private void Awake()
     {
@@ -84,4 +89,19 @@ public class MainMenuSoundManager : MonoBehaviour
     {
         MainMenuSoundManager.Instance.PlaySFX("FullScreen");
     }
+
+    // SFXVolume() metodunun adı değiştirildi ve artık sadece bir parametre alıyor
+    public void SetSFXVolumeFromSlider(float volume)
+    {
+        sfxSoucse.volume = volume;
+        Debug.Log("SFX volume set to: " + volume);
+    }
+
+
+[System.Serializable]
+public class Sound
+{
+    public string name;
+    public AudioClip clip;
+}
 }
