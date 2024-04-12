@@ -61,4 +61,5 @@ public class PlayerShoot : MonoBehaviour
         }
         cooldownImage.fillAmount = 1f;
     }
+    //s
 }
