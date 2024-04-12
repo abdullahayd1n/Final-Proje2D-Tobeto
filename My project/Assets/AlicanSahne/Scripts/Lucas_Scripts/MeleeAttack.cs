@@ -72,16 +72,10 @@ public class MeleeAttack : MonoBehaviour
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, WhatIsEnemies);
         foreach (Collider2D enemy in enemiesToDamage)
         {
-            RangedEnemy rangedEnemy = enemy.GetComponent<RangedEnemy>();
-            MeleeEnemy meleeEnemy = enemy.GetComponent<MeleeEnemy>();
-
-            if (meleeEnemy != null)
+            BossHealth boss = enemy.GetComponent<BossHealth>();
+            if (boss != null)
             {
-                meleeEnemy.TakeDamage(damage);
-            }
-            else if (rangedEnemy != null)
-            {
-                rangedEnemy.TakeDamage(damage);
+                boss.TakeDamage(damage);
             }
         }
 
@@ -106,7 +100,7 @@ public class MeleeAttack : MonoBehaviour
             Attack();
             atacakando = true;
             anim.SetTrigger("" + combo);
-            AudioManager.Instance.PlaySFX("Attack");
+            //AudioManager.Instance.PlaySFX("Attack");
         }
     }
 }

@@ -28,8 +28,10 @@ public class MeleeEnemy : MonoBehaviour
     public GameObject alert;
     public Rigidbody2D rb;
 
-    
-    
+    public int damage;
+
+
+
     Transform target;
 
     [Header("Collider Parameters")]
