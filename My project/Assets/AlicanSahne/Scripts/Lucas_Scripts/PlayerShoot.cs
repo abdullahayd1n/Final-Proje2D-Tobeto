@@ -14,6 +14,10 @@ public class PlayerShoot : MonoBehaviour
 
     public float shootInterval = 3f; // 3 saniye aralýk
 
+    public Image cooldownImage; // UI Image
+
+    private Coroutine cooldownCoroutine; // Coroutine referansý
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -28,6 +32,14 @@ public class PlayerShoot : MonoBehaviour
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
             audioSource.Play();
             StartCoroutine(ResetCanShoot());
+
+            // Eðer bir soðuma iþlemi varsa, iptal et
+            if (cooldownCoroutine != null)
+                StopCoroutine(cooldownCoroutine);
+
+            // FillAmount deðerini sýfýrla ve 3 saniyede 1'e kadar artýr
+            cooldownImage.fillAmount = 0f;
+            cooldownCoroutine = StartCoroutine(IncreaseFillAmountOverTime(shootInterval));
         }
     }
 
@@ -36,5 +48,17 @@ public class PlayerShoot : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds(shootInterval);
         canShoot = true;
+    }
+
+    IEnumerator IncreaseFillAmountOverTime(float duration)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            cooldownImage.fillAmount = elapsedTime / duration;
+            yield return null;
+        }
+        cooldownImage.fillAmount = 1f;
     }
 }
