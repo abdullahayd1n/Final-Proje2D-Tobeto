@@ -17,9 +17,5 @@ public class SeviyeBitirme : MonoBehaviour
         SceneManager.LoadScene("Seviyeler");
     }
 
-    public void seviye3bitir()
-    {
-        SeviyeYonetici.seviye2 = true;
-        SceneManager.LoadScene("Seviyeler");
-    }
+    
 }

@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class MagaraLeveleGecis : MonoBehaviour
 {
     public CinemachineVirtualCamera virtualCamera;
-    public Canvas[] canvasesToDisable; // Kapamak istediðiniz Canvas'leri buradan sürükleyip býrakabilirsiniz
+    public Canvas[] canvasesToDisable; // Kapamak istediï¿½iniz Canvas'leri buradan sï¿½rï¿½kleyip bï¿½rakabilirsiniz
     private bool isTriggered = false;
+
+    public GameObject seviyepanelObject;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,14 +22,16 @@ public class MagaraLeveleGecis : MonoBehaviour
             // Canvas'leri kapat
             DisableCanvases();
 
-            // Sahne deðiþimini baþlat
-            Invoke("ChangeScene",+ 1.5f); // Hareket süresine 1 saniye ekleyerek sahne deðiþimini geciktiriyoruz
+            ChangeScene();
+
+            // Sahne deï¿½iï¿½imini baï¿½lat
+            //Invoke("ChangeScene",+ 1.5f); // Hareket sï¿½resine 1 saniye ekleyerek sahne deï¿½iï¿½imini geciktiriyoruz
         }
     }
 
     private void DisableCanvases()
     {
-        // Tüm belirtilen Canvas'leri etkisiz hale getir
+        // Tï¿½m belirtilen Canvas'leri etkisiz hale getir
         foreach (Canvas canvas in canvasesToDisable)
         {
             canvas.enabled = false;
@@ -35,14 +39,16 @@ public class MagaraLeveleGecis : MonoBehaviour
     }
     private void ChangeScene()
     {
-        // Bir sonraki sahneye geç
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Bir sonraki sahneye geï¿½
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        seviyepanelObject.SetActive(true);
     }
 
     private void OnDestroy()
     {
-        // Bu nesne yok edildiðinde çalýþacak temizleme iþlemleri
-        // Örneðin: Invoke iþlemlerini iptal etmek
+        // Bu nesne yok edildiï¿½inde ï¿½alï¿½ï¿½acak temizleme iï¿½lemleri
+        // ï¿½rneï¿½in: Invoke iï¿½lemlerini iptal etmek
         CancelInvoke();
     }
 }

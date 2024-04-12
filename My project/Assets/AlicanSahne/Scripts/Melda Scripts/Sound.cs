@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MyNamespace
+public class Sound : MonoBehaviour
 {
-    [System.Serializable]
-    public class Sound
+   [System.Serializable]
+    public class Sound 
     {
-        public string soundName;
+        public string name;
         public AudioClip clip;
     }
 }

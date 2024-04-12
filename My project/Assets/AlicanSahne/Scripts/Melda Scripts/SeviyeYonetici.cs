@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SeviyeYonetici : MonoBehaviour
 {
@@ -20,10 +21,13 @@ public class SeviyeYonetici : MonoBehaviour
             seviye2_button.interactable = true;
         }
 
-        if(seviye3 == true)
-        {
-            seviye3_button.interactable = true;
-        }
+    
+    }
+
+    public void Level1()
+
+    {
+        SceneManager.LoadScene("Level1");
 
     }
 }
