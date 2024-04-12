@@ -7,6 +7,7 @@ public class Cehest2 : MonoBehaviour
     public Animator chestAnimator; // Sandýk animator bileþeni
     private bool isPlayerInside; // Karakterin sandýk içinde olup olmadýðýný belirten boolean
     public GameObject button; // Açma düðmesi
+    public Canvas konusmaBalonu;
 
     public GameObject[] objectsToSpawn; // Sandýktan çýkacak objelerin listesi
     private int maxObjectsToSpawn = 3; // Sandýktan çýkacak maksimum obje sayýsý
@@ -17,6 +18,7 @@ public class Cehest2 : MonoBehaviour
         {
             isPlayerInside = true; // Karakter sandýk içine girdiðinde boolean deðeri true olarak ayarla
             button.SetActive(true);
+            KonusmaBalonuKanvasAc();
         }
     }
 
@@ -26,6 +28,7 @@ public class Cehest2 : MonoBehaviour
         {
             isPlayerInside = false; // Karakter sandýk içinden çýktýðýnda boolean deðeri false olarak ayarla
             button.SetActive(false);
+            KonusmaBalonuKapat();
         }
     }
 
@@ -66,6 +69,18 @@ public class Cehest2 : MonoBehaviour
 
         // 1 saniye sonra sandýðýn yok olmasýný saðla
         Invoke("DestroyChest", 1f);
+    }
+
+    private void KonusmaBalonuKanvasAc()
+    {
+        if(konusmaBalonu!=null)
+            konusmaBalonu.gameObject.SetActive(true);
+    }
+
+    private void KonusmaBalonuKapat()
+    {
+        if (konusmaBalonu != null)
+            konusmaBalonu.gameObject.SetActive(false);
     }
 
     private void DestroyChest()

@@ -4,8 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-public class SoundManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
+    public Slider _musicSlidere, _sfxSlider;
+
+    public void ToggleMusic()
+    {
+        AudioManager.Instance.ToggleMusic();
+    }
+    public void ToggleSFX()
+    {
+        AudioManager.Instance.ToggleSFX();
+    }
+
+    public void MusicVolume()
+    {
+        AudioManager.Instance.MusicVolume(_musicSlidere.value);
+    }
+
+    public void SFXVolume()
+    {
+        AudioManager.Instance.SFXVolume(_sfxSlider.value);
+        Debug.Log("sfx");
+    }
+}
+/* {
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider volumeSlider;
     [SerializeField] Slider SFXSlider;
@@ -38,9 +61,11 @@ public class SoundManager : MonoBehaviour
 
     public void SetSFXVolume()
     {
-        float volume = SFXSlider.value;
+       float volume = SFXSlider.value;
         myMixer.SetFloat("SFX", Mathf.Log10(volume)*20);
-        PlayerPrefs.SetFloat("SFXVolume", volume);
+        PlayerPrefs.SetFloat("SFXVolume", volume); 
+        MainMenuSoundManager.Instance.SFXVolume(SFXSlider.value);
+        Debug.Log("sfx");
     }
 
     public void LoadVolume()
@@ -52,6 +77,6 @@ public class SoundManager : MonoBehaviour
         SetMusicVolume();
         SetSFXVolume();
 
-    }
-}    
+    } 
+}*/
     
