@@ -108,14 +108,13 @@ public class AudioManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX("PanelFullScreen");
     }
-
-
 }
-
 [System.Serializable]
 public class Sound
 {
     public string name;
     public AudioClip clip;
 }
+
+
 
