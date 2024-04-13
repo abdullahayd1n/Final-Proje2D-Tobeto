@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bosGris : MonoBehaviour
 {
+    public GameObject bostutumu;
     public Cinemachine.CinemachineVirtualCamera PlayerCam;
     public Cinemachine.CinemachineVirtualCamera bosCamera;
     public Rigidbody2D rb;
@@ -22,6 +23,8 @@ public class bosGris : MonoBehaviour
 
         isSwitched = true;
         SwitchCamera();
+
+        Destroy(bostutumu.gameObject);
     }
 
     private void SwitchCamera()

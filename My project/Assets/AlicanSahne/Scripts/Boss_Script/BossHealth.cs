@@ -13,12 +13,24 @@ public class BossHealth : MonoBehaviour
     public GameObject deathEffect;
     public bool isInvulnerable = false;
     private bool isDead = false;
-    public float removeEnemy = 2f; // Düþmaný kaldýrma süresi
+    public float removeEnemy = 1.3f; // Düþmaný kaldýrma süresi
     private Animator anim;
+    
+
+    // Ölüm sonrasý atýlacak para prefabý
+    public GameObject moneyPrefab;
+    public int moneyAmount = 21;
+
+    // Item drop prefab'larý
+    public GameObject[] itemDropPrefabs;
+
+    // Düþüþ sayacý
+    private int dropCounter = 0;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        
     }
 
     public void TakeDamage(int damage)
@@ -27,6 +39,28 @@ public class BossHealth : MonoBehaviour
             return;
 
         health -= damage;
+
+        // Her %25'lik dilimde bir kez düþürme kontrolü
+        if (health <= 375 && dropCounter == 0)
+        {
+            DropItem();
+            dropCounter++;
+        }
+        else if (health <= 250 && dropCounter == 1)
+        {
+            DropItem();
+            dropCounter++;
+        }
+        else if (health <= 125 && dropCounter == 2)
+        {
+            DropItem();
+            dropCounter++;
+        }
+        else if (health <= 0 && dropCounter == 3)
+        {
+            DropItem();
+            dropCounter++;
+        }
 
         if (health <= 0 && !isDead)
         {
@@ -42,11 +76,17 @@ public class BossHealth : MonoBehaviour
         // Oyunu yavaþlatmak için Time.timeScale kullanýlýr
         Time.timeScale = 0.5f; // Yavaþlama faktörünü ayarlayabilirsiniz
 
+        // Ölüm sonrasý paralarýn atýlmasý
+        for (int i = 0; i < moneyAmount; i++)
+        {
+            Instantiate(moneyPrefab, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0), Quaternion.identity);
+        }
+
         StartCoroutine(DisableBossAndResumeGame());
 
         Destroy(tas1.gameObject);
         Destroy(tas2.gameObject);
-        Invoke("SwitchCamera", 1.5f);
+        SwitchCamera();
 
     }
     private void SwitchCamera()
@@ -57,7 +97,7 @@ public class BossHealth : MonoBehaviour
 
     IEnumerator DisableBossAndResumeGame()
     {
-        yield return new WaitForSeconds(1.5f); // Animasyonun süresine göre ayarlayýn
+        yield return new WaitForSeconds(0.8f); // Animasyonun süresine göre ayarlayýn
 
         // Oyunu yeniden normal hýzda çalýþtýr
         Time.timeScale = 1f;
@@ -69,6 +109,16 @@ public class BossHealth : MonoBehaviour
         if (deathEffect != null)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
+    }
+
+    // Rastgele bir öðe düþürme fonksiyonu
+    private void DropItem()
+    {
+        if (itemDropPrefabs.Length > 0)
+        {
+            int randomIndex = Random.Range(0, itemDropPrefabs.Length); // Rastgele bir index seçer.
+            Instantiate(itemDropPrefabs[randomIndex], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
     }
 }
