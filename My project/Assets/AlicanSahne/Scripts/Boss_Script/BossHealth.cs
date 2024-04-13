@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-
     public int health = 500;
-
     public GameObject deathEffect;
-
     public bool isInvulnerable = false;
+    private bool isDead = false;
+    public float removeEnemy = 2f; // Düþmaný kaldýrma süresi
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void TakeDamage(int damage)
     {
@@ -18,22 +23,37 @@ public class BossHealth : MonoBehaviour
 
         health -= damage;
 
-        if (health <= 200)
-        {
-            GetComponent<Animator>().SetBool("IsEnraged", true);
-        }
-
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             Die();
         }
     }
 
-
     void Die()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        isDead = true;
+        anim.SetTrigger("Die");
+
+        // Oyunu yavaþlatmak için Time.timeScale kullanýlýr
+        Time.timeScale = 0.1f; // Yavaþlama faktörünü ayarlayabilirsiniz
+
+        StartCoroutine(DisableBossAndResumeGame());
     }
 
+    IEnumerator DisableBossAndResumeGame()
+    {
+        yield return new WaitForSeconds(1.5f); // Animasyonun süresine göre ayarlayýn
+
+        // Oyunu yeniden normal hýzda çalýþtýr
+        Time.timeScale = 1f;
+
+        // Boss objesini yok et
+        Destroy(gameObject);
+
+        // Opsiyonel olarak ölüm efekti oluþturabilirsiniz
+        if (deathEffect != null)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
+    }
 }

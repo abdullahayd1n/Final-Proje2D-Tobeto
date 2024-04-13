@@ -19,6 +19,8 @@ public class Mermi : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
+
         if (collision.CompareTag("WhatIsEnemies"))
         {
             RangedEnemy rangedEnemy = collision.GetComponent<RangedEnemy>();
@@ -26,6 +28,7 @@ public class Mermi : MonoBehaviour
             {
                 int damage = Random.Range(minDamage, maxDamage + 1); // Randomize damage amount
                 rangedEnemy.TakeDamage(damage);
+                Destroy(gameObject);
             }
 
             MeleeEnemy meleeEnemy = collision.GetComponent<MeleeEnemy>();
@@ -33,9 +36,18 @@ public class Mermi : MonoBehaviour
             {
                 int damage = Random.Range(minDamage, maxDamage + 1); // Randomize damage amount
                 meleeEnemy.TakeDamage(damage);
+                Destroy(gameObject);
             }
-
-            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Boss")) // Check if collided with Boss
+        {
+            BossHealth boss = collision.GetComponent<BossHealth>();
+            if (boss != null)
+            {
+                int damage = Random.Range(minDamage, maxDamage + 1); // Randomize damage amount
+                boss.TakeDamage(damage);
+                Destroy(gameObject);
+            }
         }
     }
 }

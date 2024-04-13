@@ -15,6 +15,7 @@ TagManager:
   - ItilecekNesne
   - watersound
   - jumpplants
+  - Boss
   layers:
   - Default
   - TransparentFX
