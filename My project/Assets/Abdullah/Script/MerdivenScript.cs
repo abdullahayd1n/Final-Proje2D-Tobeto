@@ -22,14 +22,15 @@ public class MerdivenScript : MonoBehaviour
 
     public void tirmanma()
     {
-        // Eðer dokunmatik ekran üzerindeki zýplama butonuna basýlýrsa veya basýlý tutulursa
+        // Eï¿½er dokunmatik ekran ï¿½zerindeki zï¿½plama butonuna basï¿½lï¿½rsa veya basï¿½lï¿½ tutulursa
         if (isLadder && Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0); // Ýlk dokunuþu al
+            Touch touch = Input.GetTouch(0); // ï¿½lk dokunuï¿½u al
 
-            // Eðer dokunuþ, zýplama butonu içindeyse
+            // Eï¿½er dokunuï¿½, zï¿½plama butonu iï¿½indeyse
             if (touch.position.x > Screen.width / 2)
             {
+                AudioManager.Instance.PlaySFX("climbing");
                 isClimbing = true;
             }
             else
@@ -42,7 +43,7 @@ public class MerdivenScript : MonoBehaviour
             isClimbing = false;
         }
 
-        // Animasyon kontrolü
+        // Animasyon kontrolï¿½
         anim.SetBool("isClimbing", isClimbing);
     }
 
@@ -50,13 +51,13 @@ public class MerdivenScript : MonoBehaviour
     {
         if (isClimbing)
         {
-            // Karakter merdivenlerde yukarý doðru hareket eder
+            // Karakter merdivenlerde yukarï¿½ doï¿½ru hareket eder
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, speed);
         }
         else
         {
-            // Karakter normal yerçekimi etkisinde olur
+            // Karakter normal yerï¿½ekimi etkisinde olur
             rb.gravityScale = 1.8f;
         }
     }
@@ -73,7 +74,7 @@ public class MerdivenScript : MonoBehaviour
     {
         if (collision.CompareTag("Ladder"))
         {
-            // Merdivenlerden çýkýldýðýnda karakterin merdiven çýkma iþlemi iptal edilir
+            // Merdivenlerden ï¿½ï¿½kï¿½ldï¿½ï¿½ï¿½nda karakterin merdiven ï¿½ï¿½kma iï¿½lemi iptal edilir
             isLadder = false;
             isClimbing = false;
         }

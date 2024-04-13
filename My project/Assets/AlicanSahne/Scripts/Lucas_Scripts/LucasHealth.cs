@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LucasHealth : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class LucasHealth : MonoBehaviour
     public TMP_Text popUpText;
     public GameObject DeadMenu;
     private bool isPaused = false;
+
+    public Canvas deadCanvas;
 
     private Vector3 respawnPosition;
 
@@ -62,12 +65,13 @@ public class LucasHealth : MonoBehaviour
         anim.SetBool("dead", true);
         //AudioManager.Instance.PlaySFX("die");
         float animationLength = anim.GetCurrentAnimatorStateInfo(0).length;
-        StartCoroutine(FallAndStopAndOpenMenu(animationLength)); // Coroutine'u güncelledik.
+        StartCoroutine(FallAndStopAndOpenMenu(animationLength)); // Coroutine'u gï¿½ncelledik.
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
 
     public void Pause()
     {
+        
         DeadMenu.SetActive(true);
         Time.timeScale = 0.58f;
         isPaused = true;
@@ -87,7 +91,7 @@ public class LucasHealth : MonoBehaviour
 
         Time.timeScale = 0f;
 
-        // Menünün açýlmasý
+        // Menï¿½nï¿½n aï¿½ï¿½lmasï¿½
         isPaused = true;
         DeadMenu.SetActive(true);
     }
