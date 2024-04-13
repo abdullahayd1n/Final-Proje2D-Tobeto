@@ -8,7 +8,7 @@ public class BossHealth : MonoBehaviour
     public GameObject deathEffect;
     public bool isInvulnerable = false;
     private bool isDead = false;
-    public float removeEnemy = 2f; // Düþmaný kaldýrma süresi
+    public float removeEnemy = 1.3f; // Düþmaný kaldýrma süresi
     private Animator anim;
 
     void Start()
@@ -42,7 +42,7 @@ public class BossHealth : MonoBehaviour
 
     IEnumerator DisableBossAndResumeGame()
     {
-        yield return new WaitForSeconds(1.5f); // Animasyonun süresine göre ayarlayýn
+        yield return new WaitForSeconds(0.8f); // Animasyonun süresine göre ayarlayýn
 
         // Oyunu yeniden normal hýzda çalýþtýr
         Time.timeScale = 1f;

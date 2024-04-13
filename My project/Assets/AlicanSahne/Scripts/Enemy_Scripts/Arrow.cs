@@ -4,7 +4,7 @@ public class Arrow : MonoBehaviour
 {
     public int minDamage = 25; // Minimum Hasar
     public int maxDamage = 50; // Maksimum Hasar
-    public float knockbackForce = 10f; // Geri itme kuvveti
+    public float knockbackForce = 5f; // Geri itme kuvveti
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
