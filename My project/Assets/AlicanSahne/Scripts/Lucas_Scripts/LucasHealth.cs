@@ -16,7 +16,7 @@ public class LucasHealth : MonoBehaviour
     public GameObject DeadMenu;
     private bool isPaused = false;
 
-    public Canvas deadCanvas;
+    
 
     private Vector3 respawnPosition;
 
@@ -49,6 +49,7 @@ public class LucasHealth : MonoBehaviour
 
             if (currentHealth <= 0)
                 Die();
+                
             else
             {
                 healthBar.setHealth((int)currentHealth);
@@ -67,10 +68,13 @@ public class LucasHealth : MonoBehaviour
         float animationLength = anim.GetCurrentAnimatorStateInfo(0).length;
         StartCoroutine(FallAndStopAndOpenMenu(animationLength)); // Coroutine'u g�ncelledik.
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+        
     }
 
     public void Pause()
     {
+        
+
         
         DeadMenu.SetActive(true);
         Time.timeScale = 0.58f;

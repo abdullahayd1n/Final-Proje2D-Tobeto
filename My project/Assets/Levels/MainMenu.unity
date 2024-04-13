@@ -261,7 +261,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.576
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -903,6 +903,7 @@ MonoBehaviour:
   musicSource: {fileID: 119600268}
   sfxSoucse: {fileID: 1093395496}
   _sfxSlider: {fileID: 1638012339}
+  _musicSlider: {fileID: 2000622501}
 --- !u!1 &1093395494
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +948,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.509
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2616,6 +2617,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940305388}
   m_Enabled: 1
+--- !u!114 &2000622501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6408470782254226399, guid: 16695da1bdb4b4791ad7e2256b60447d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2402814852925546447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2005535882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +3085,26 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 796857531}
+    - target: {fileID: 6408470782254226399, guid: 16695da1bdb4b4791ad7e2256b60447d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408470782254226399, guid: 16695da1bdb4b4791ad7e2256b60447d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 119600268}
+    - target: {fileID: 6408470782254226399, guid: 16695da1bdb4b4791ad7e2256b60447d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408470782254226399, guid: 16695da1bdb4b4791ad7e2256b60447d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7872948378956628948, guid: 16695da1bdb4b4791ad7e2256b60447d,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

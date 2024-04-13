@@ -13,6 +13,8 @@ public class MainMenuSoundManager : MonoBehaviour
 
     public Slider _sfxSlider;
 
+    public Slider _musicSlider;
+
 
 
     private void Awake()
@@ -95,6 +97,11 @@ public class MainMenuSoundManager : MonoBehaviour
     {
         sfxSoucse.volume = volume;
         Debug.Log("SFX volume set to: " + volume);
+    }
+    public void SetMusicVolumeFromSlider(float volume)
+    {
+        musicSource.volume = volume;
+        
     }
 
 
