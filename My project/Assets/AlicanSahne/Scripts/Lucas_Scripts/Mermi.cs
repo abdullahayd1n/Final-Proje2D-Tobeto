@@ -19,7 +19,6 @@ public class Mermi : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
 
         if (collision.CompareTag("WhatIsEnemies"))
         {
