@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] musicSounds, sfxSound;
     public AudioSource musicSource, sfxSoucse;
+    public Slider _sfxSlider;
+
+    public Slider _musicSlider;
 
     private void Awake()
     {
@@ -107,6 +111,16 @@ public class AudioManager : MonoBehaviour
     public void PanelFullScreenButtonSound()
     {
         AudioManager.Instance.PlaySFX("PanelFullScreen");
+    }
+    public void SetSFXVolumeFromSlider(float volume)
+    {
+        sfxSoucse.volume = volume;
+        
+    }
+    public void SetMusicVolumeFromSlider(float volume)
+    {
+        musicSource.volume = volume;
+        
     }
 }
 [System.Serializable]
