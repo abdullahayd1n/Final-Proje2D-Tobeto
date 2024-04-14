@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
+
 {
    public void PlayGame()
    {
@@ -16,10 +17,6 @@ public class MainMenu : MonoBehaviour
     Application.Quit();
     Debug.Log("oyun bitti");
    }
-    public void GoToMainMenu()
-    {
-
-        SceneManager.LoadSceneAsync("MainMenu"); // Ana menü sahnesine geç
-    }
+    
 
 }
