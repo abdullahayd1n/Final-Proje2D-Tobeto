@@ -19,12 +19,14 @@ public class bosGris : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             StartCoroutine(TriggeredFall());
+
+            bostutumu.SetActive(true);
         }
 
         isSwitched = true;
         SwitchCamera();
 
-        Destroy(bostutumu.gameObject);
+        
     }
 
     private void SwitchCamera()
