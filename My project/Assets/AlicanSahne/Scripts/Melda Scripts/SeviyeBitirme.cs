@@ -14,7 +14,7 @@ public class SeviyeBitirme : MonoBehaviour
     public void seviye2bitir()
     {
         SeviyeYonetici.seviye3 = true;
-        SceneManager.LoadScene("Seviyeler");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     

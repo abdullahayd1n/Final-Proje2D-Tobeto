@@ -22,20 +22,28 @@ public class MerdivenScript : MonoBehaviour
 
     public void tirmanma()
     {
-        // E�er dokunmatik ekran �zerindeki z�plama butonuna bas�l�rsa veya bas�l� tutulursa
-        if (isLadder && Input.touchCount > 0)
+        // Eğer dokunmatik ekran üzerindeki zıplama butonuna basılırsa veya basılı tutulursa
+        if (isLadder && (Input.touchCount > 0 || Input.GetKey(KeyCode.Space)))
         {
-            Touch touch = Input.GetTouch(0); // �lk dokunu�u al
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0); // İlk dokunuşu al
 
-            // E�er dokunu�, z�plama butonu i�indeyse
-            if (touch.position.x > Screen.width / 2)
+                // Eğer dokunuş, zıplama butonu içindeyse
+                if (touch.position.x > Screen.width / 2)
+                {
+                    AudioManager.Instance.PlaySFX("climbing");
+                    isClimbing = true;
+                }
+                else
+                {
+                    isClimbing = false;
+                }
+            }
+            else if (Input.GetKey(KeyCode.Space)) // Uzay tuşu basılmışsa
             {
                 AudioManager.Instance.PlaySFX("climbing");
                 isClimbing = true;
-            }
-            else
-            {
-                isClimbing = false;
             }
         }
         else
@@ -43,7 +51,7 @@ public class MerdivenScript : MonoBehaviour
             isClimbing = false;
         }
 
-        // Animasyon kontrol�
+        // Animasyon kontrolü
         anim.SetBool("isClimbing", isClimbing);
     }
 
