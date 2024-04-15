@@ -4653,9 +4653,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7872948378956628948, guid: 16695da1bdb4b4791ad7e2256b60447d,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872948378956628948, guid: 16695da1bdb4b4791ad7e2256b60447d,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 796857531}
+      objectReference: {fileID: 1093395496}
+    - target: {fileID: 7872948378956628948, guid: 16695da1bdb4b4791ad7e2256b60447d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872948378956628948, guid: 16695da1bdb4b4791ad7e2256b60447d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8452699392601310657, guid: 16695da1bdb4b4791ad7e2256b60447d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4686,7 +4701,7 @@ Transform:
   m_GameObject: {fileID: 5072970362678339369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.99, y: 1.59, z: -9719.999}
+  m_LocalPosition: {x: 1, y: -6, z: -9719.999}
   m_LocalScale: {x: 37.513077, y: 32.928486, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
