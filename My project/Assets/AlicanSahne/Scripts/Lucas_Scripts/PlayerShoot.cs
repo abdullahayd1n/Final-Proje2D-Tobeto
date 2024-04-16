@@ -22,6 +22,11 @@ public class PlayerShoot : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
+        // C tuþuna atama eklemek için Input System'den tetikleyiciyi ayarla
+        InputAction shootAction = new InputAction(binding: "<Keyboard>/t");
+        shootAction.performed += _ => Shoot(); // Atýþ fonksiyonunu çaðýr
+        shootAction.Enable(); // Tetikleyiciyi etkinleþtir
     }
 
     public void Shoot()
@@ -61,5 +66,4 @@ public class PlayerShoot : MonoBehaviour
         }
         cooldownImage.fillAmount = 1f;
     }
-    //s
 }
