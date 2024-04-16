@@ -25,6 +25,10 @@ public class MainMenu : MonoBehaviour
     Debug.Log("oyun bitti");
    }
 
+    public void MainMenus()
+    {
+      SceneManager.LoadScene(0);
+    }
     
 
 

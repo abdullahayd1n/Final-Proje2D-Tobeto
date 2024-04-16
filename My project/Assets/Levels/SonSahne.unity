@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da47c71eb457d42d69a12197b99429bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToToggle: {fileID: 0}
 --- !u!1 &393081488
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +934,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 259032936}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: MainMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
